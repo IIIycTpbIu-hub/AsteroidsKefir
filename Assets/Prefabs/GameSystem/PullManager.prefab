@@ -70,3 +70,7 @@ MonoBehaviour:
     prefab: {fileID: -3217918120019556257, guid: 0cd2c450034dec74c8e3a985c2c6e181,
       type: 3}
     count: 2
+  - name: UFOExplosion
+    prefab: {fileID: 7604805238658644497, guid: f64f106bc42ce7644b74b3de64164659,
+      type: 3}
+    count: 1
