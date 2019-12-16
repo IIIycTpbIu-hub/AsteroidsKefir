@@ -62,3 +62,11 @@ MonoBehaviour:
   - name: SmallAsteroid_1
     prefab: {fileID: 11472004, guid: c61853d458bc4824ca31ee018f01f9f3, type: 3}
     count: 30
+  - name: BigAsteroidExplosion
+    prefab: {fileID: -5494453229363021001, guid: 9b4bb80c4b351fe46b32742f901976a3,
+      type: 3}
+    count: 2
+  - name: SmallAsteroidExplosion
+    prefab: {fileID: -3217918120019556257, guid: 0cd2c450034dec74c8e3a985c2c6e181,
+      type: 3}
+    count: 2

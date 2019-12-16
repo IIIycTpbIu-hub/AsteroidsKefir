@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class BigAsteroidDestroyModel : BaseCustomDestoroyModel {
 
@@ -11,10 +10,9 @@ public class BigAsteroidDestroyModel : BaseCustomDestoroyModel {
 		//DestroyObject += GameManager.Instanse.DamageController.OnDestroy;
 	}
 
-	public override void Destroy ()
+	public override void CustomDestroyBehavior ()
 	{
 		health = _initialHealth;
-		gameObject.GetComponent<PoolObject> ().ReturnToPool ();
-		//DestroyObject (gameObject, gameObject);
+		GameObject shot = PoolManager.GetObject ("BigAsteroidExplosion", transform.position, transform.rotation);
 	}
 }

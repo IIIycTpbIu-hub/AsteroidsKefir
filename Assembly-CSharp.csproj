@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\BigAsteroidDestroyModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\IDestroyable.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\SimpleDestroyModel.cs" />
+     <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\SmallAsteroidDestroyModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\HealthModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\ShootModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\StrongWeaponController.cs" />

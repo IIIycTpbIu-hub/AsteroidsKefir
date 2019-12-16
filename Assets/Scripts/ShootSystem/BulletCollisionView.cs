@@ -15,6 +15,6 @@ public class BulletCollisionView : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		GameManager.Instanse.GameEventSystem.HitEventLaunch (gameObject, other.gameObject);		
+		GameManager.Instanse.GameEventSystem.HitEventLaunch (gameObject, other.gameObject);
 	}	
 }
