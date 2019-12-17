@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6073970}
   - component: {fileID: 11426290}
   - component: {fileID: 11434556}
+  - component: {fileID: 7134425890116803734}
   m_Layer: 0
   m_Name: BigAsteroid_3
   m_TagString: Untagged
@@ -180,3 +181,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+--- !u!114 &7134425890116803734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0d6578abdcc3b44be7097856c7b1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  padding: 0.1

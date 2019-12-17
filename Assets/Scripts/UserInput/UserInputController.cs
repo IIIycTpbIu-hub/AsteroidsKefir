@@ -32,7 +32,14 @@ public class UserInputController
 	{
 		if (_commands.ContainsKey (keyCode)) {
 			ICommand currentCommand = _commands [keyCode];
-			currentCommand.Execute ();
+			if(!GameManager.Instanse.IsGamePaused)//если не пауза
+			{
+				currentCommand.Execute ();
+			}
+			else if(keyCode == KeyCode.Escape)
+			{
+				currentCommand.Execute ();
+			}
 		}
 	}
 
