@@ -13,7 +13,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\StarsGenerator.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithStrongWeaponCommand.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithWeakWeaponCommand.cs" />
+     <Compile Include="Assets\Scripts\UserInput\InputCommands\GamePauseCommand.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\ICommand.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\MoveTowardsCommand.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\RotateLeftCommand.cs" />

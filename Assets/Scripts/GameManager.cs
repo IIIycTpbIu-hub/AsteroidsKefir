@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour {
 	public int maxAsteroidsCountInSciene;
 	public GameObject asteroidsSpawnPointsObject;
 
+	public GameObject StartGamePannel;
+	public GameObject PlayerPannel;
+	public GameObject ScoreDisplay;
+	public GameObject GameOverDisplay;
+	public GameObject PauseDisplay;
+
 	
 	UserInputView _userInput;
 	PlayerMovementModel _playerMovementModel;
@@ -67,6 +73,8 @@ public class GameManager : MonoBehaviour {
 
 	public ShootModel ShotModel {get {return _shotModel;}}
 
+	public bool IsGamePaused {get; set;}
+
 	void Awake()
 	{
 		_maxAsteroidsCount = maxAsteroidsCountInSciene;
@@ -108,9 +116,9 @@ public class GameManager : MonoBehaviour {
 		Instantiate (strongWeaponController);
 
 		//инициализируем UI
-		_playerPannel = new PlayerPannelController(GameObject.Find("PlayerPannel"));
+		_playerPannel = new PlayerPannelController(PlayerPannel);
 		_gameEventSystem.UpdateStrongBulletValueLaunch(avaibleStrongBullet);
-		_scoreController = new ScoreController(GameObject.Find("ScoreDisplay"));
+		_scoreController = new ScoreController(ScoreDisplay);
 		//инициализируем спавн астероидов
 		_asteroidsSpawnModel = new AsteroidsSpawnModel (asteroidsSpawnPointsObject);
 		_asteroidsSpawnController = new AsteroidsSpawnController (bigAsteroids, smallAsteroids,

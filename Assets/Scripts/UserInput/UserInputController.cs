@@ -25,7 +25,8 @@ public class UserInputController
 		_commands.Add (KeyCode.D, new RotateRightCommand (_playerMovModel));
 		_commands.Add (KeyCode.Space, new FireWithWeakWeaponCommand (_shootModel));
 		_commands.Add (KeyCode.R, new FireWithStrongWeaponCommand ());
-	}
+		_commands.Add(KeyCode.Escape, new GamePauseCommand());
+	} 
 
 	public void OnKeyPressed(KeyCode keyCode)
 	{
