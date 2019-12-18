@@ -10,35 +10,25 @@ public class ChangeVisualRegime : MonoBehaviour
     public Material poligonMaterial;
     public Collider2D col;
 
+
     bool _spriteMode = true;
     void Start()
     {
-
+        GameManager.Instanse.GameEventSystem.SwitchDisplayMode +=OnSwitchDisplayMode;
     }
 
-    private void Update() {
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            if(!_spriteMode)
-            {
-                SpriteVisualization();
-            }
-            else
-            {
-                PoliginVisualization();
-            }  
-        }
-        if(Input.GetKeyDown(KeyCode.W))
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 10f);
-        }
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.down * 10f);
-        }
-        //transform.Rotate(Vector3.left);   
-    }
 
+    private void OnSwitchDisplayMode(bool isSpriteMode)
+    {
+        if(isSpriteMode)
+        {
+            SpriteVisualization();
+        }
+        else
+        {
+            PoliginVisualization();
+        }
+    }
     private void PoliginVisualization()
     {
        DestroyImmediate(gameObject.GetComponent<SpriteRenderer>());
@@ -46,9 +36,8 @@ public class ChangeVisualRegime : MonoBehaviour
        meshRenderer.material = poligonMaterial;
        MeshFilter meshFilter = gameObject.AddComponent<MeshFilter>();
        meshFilter.mesh = mesh;
-       transform.localScale = new Vector3(0.3f,0.3f,0.3f);
-       transform.Rotate(new Vector3(0, 0, 0));
-       _spriteMode = false;
+       //transform.localScale = new Vector3(0.3f,0.3f,0.3f);
+       //transform.Rotate(switchedRotation);
     }
 
     private void SpriteVisualization()
@@ -58,9 +47,8 @@ public class ChangeVisualRegime : MonoBehaviour
         gameObject.AddComponent<SpriteRenderer>();
         SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = Sprite;
-        transform.localScale = new Vector3(10, 10, 10);
-        transform.Rotate(new Vector3(0, 0, 180));
-        _spriteMode = true;
+        //transform.localScale = new Vector3(10, 10, 10);
+        //transform.Rotate(new Vector3(0, 0, 180));
     }
 
     private void ReactivateObject()
