@@ -644,16 +644,16 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 3949c62ba99f88f409b4b69292293867, type: 3}
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 591898714}
+        m_MethodName: SetPoligonalView
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: On
-          m_BoolArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   m_IsOn: 1
 --- !u!1 &2050841376 stripped
@@ -829,7 +829,7 @@ PrefabInstance:
     - target: {fileID: 4845441742302465220, guid: e39b3f75a2d2a184fbe1e2539a655c7b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6062886017886303383, guid: e39b3f75a2d2a184fbe1e2539a655c7b,
         type: 3}
@@ -944,12 +944,12 @@ PrefabInstance:
     - target: {fileID: 7221929137796185743, guid: e39b3f75a2d2a184fbe1e2539a655c7b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8663849997165033529, guid: e39b3f75a2d2a184fbe1e2539a655c7b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e39b3f75a2d2a184fbe1e2539a655c7b, type: 3}

@@ -3,7 +3,7 @@
 public delegate void UserInputEventHandler(KeyCode keyCode);
 public delegate void WeaponEventHandler(GameObject weapon ,GameObject victim);
 public delegate void UIPlayerPannelEventHandler(int value);
-public delegate void DisplayModeEventHandled(int value);
+public delegate void DisplayModeEventHandled(bool value);
 
 public class GameEventSystem
 {
@@ -56,7 +56,7 @@ public class GameEventSystem
 		UpdateHealthValue(value);
 	}
 
-	public void SwitchDisplayModeLaunch(int isSpriteMode)
+	public void SwitchDisplayModeLaunch(bool isSpriteMode)
 	{
 		SwitchDisplayMode(isSpriteMode);
 	}
