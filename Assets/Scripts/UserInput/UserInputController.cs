@@ -14,8 +14,6 @@ public class UserInputController
 		_playerMovModel = movementModel;
 		_shootModel = shotModel;
 		_userInputView = new UserInputView (this);
-		//_userInputView.KeyPress += OnKeyPressed;
-		//_userInputView.KeyUp += OnKeyUp;
 		GameManager.Instanse.GameEventSystem.KeyPress += OnKeyPressed;
 		GameManager.Instanse.GameEventSystem.KeyUp += OnKeyUp;
 
@@ -36,7 +34,7 @@ public class UserInputController
 			{
 				currentCommand.Execute ();
 			}
-			else if(keyCode == KeyCode.Escape)
+			else if(keyCode == KeyCode.Escape)//в паузе только Escape
 			{
 				currentCommand.Execute ();
 			}

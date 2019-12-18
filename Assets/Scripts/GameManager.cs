@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject PauseDisplay;
 
 	
+	bool _isSpriteMode = true;
 	UserInputView _userInput;
 	PlayerMovementModel _playerMovementModel;
 	ShootModel _shotModel;
@@ -75,6 +76,12 @@ public class GameManager : MonoBehaviour {
 
 	public bool IsGamePaused {get; set;}
 
+	public void SetPoligonalView(bool val)
+	{
+		_isSpriteMode = val;
+		GameEventSystem.SwitchDisplayModeLaunch(_isSpriteMode);
+	}
+
 	void Awake()
 	{
 		_maxAsteroidsCount = maxAsteroidsCountInSciene;
@@ -84,6 +91,7 @@ public class GameManager : MonoBehaviour {
 		}
 		_instanse = this;
 		DontDestroyOnLoad (gameObject);
+		
 	}
 
 

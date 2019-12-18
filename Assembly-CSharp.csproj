@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\ObjectScreenKeep\TransformOffScreen.cs" />
      <Compile Include="Assets\Scripts\ObjectScreenKeep\WrapScreen.cs" />
      <Compile Include="Assets\Scripts\ScoreController.cs" />
+     <Compile Include="Assets\Scripts\ScriptsTests\ChangeVisualRegime.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\LightBurstSpawnerMover.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\Shot.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\Spawner.cs" />
