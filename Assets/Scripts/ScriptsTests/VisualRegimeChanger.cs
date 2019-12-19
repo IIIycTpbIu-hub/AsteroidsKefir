@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeVisualRegime : MonoBehaviour
+public class VisualRegimeChanger : MonoBehaviour
 {
     public Sprite Sprite;
     public Material spriteMaterial;
@@ -11,12 +11,24 @@ public class ChangeVisualRegime : MonoBehaviour
     public Collider2D col;
 
 
-    bool _spriteMode = true;
+    bool _isSpriteMode = true;
     void Start()
     {
         GameManager.Instanse.GameEventSystem.SwitchDisplayMode +=OnSwitchDisplayMode;
     }
 
+    private void Awake() {
+        
+    }
+
+    private void OnBecameVisible() {
+        bool newIsSpriteMode = GameManager.Instanse.GetPoligonalView();
+        if(_isSpriteMode != newIsSpriteMode)
+        {
+            OnSwitchDisplayMode(newIsSpriteMode);
+            _isSpriteMode = newIsSpriteMode;
+        }
+    }
 
     private void OnSwitchDisplayMode(bool isSpriteMode)
     {
@@ -28,6 +40,7 @@ public class ChangeVisualRegime : MonoBehaviour
         {
             PoliginVisualization();
         }
+        _isSpriteMode = isSpriteMode;
     }
     private void PoliginVisualization()
     {

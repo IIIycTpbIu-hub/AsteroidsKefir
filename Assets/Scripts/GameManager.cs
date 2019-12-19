@@ -82,6 +82,11 @@ public class GameManager : MonoBehaviour {
 		GameEventSystem.SwitchDisplayModeLaunch(_isSpriteMode);
 	}
 
+	public bool GetPoligonalView()
+	{
+		return _isSpriteMode;
+	}
+
 	void Awake()
 	{
 		_maxAsteroidsCount = maxAsteroidsCountInSciene;

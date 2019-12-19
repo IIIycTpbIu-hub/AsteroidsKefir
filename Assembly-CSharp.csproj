@@ -13,7 +13,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
@@ -56,12 +56,12 @@
      <Compile Include="Assets\Scripts\ObjectScreenKeep\TransformOffScreen.cs" />
      <Compile Include="Assets\Scripts\ObjectScreenKeep\WrapScreen.cs" />
      <Compile Include="Assets\Scripts\ScoreController.cs" />
-     <Compile Include="Assets\Scripts\ScriptsTests\ChangeVisualRegime.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\LightBurstSpawnerMover.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\Shot.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\Spawner.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\TestForse.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\TestForse2D.cs" />
+     <Compile Include="Assets\Scripts\ScriptsTests\VisualRegimeChanger.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\BulletCollisionView.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\DamageController.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\BaseCustomDestoroyModel.cs" />
