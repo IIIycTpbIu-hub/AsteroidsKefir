@@ -135,7 +135,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 112720, guid: 1d98da41b43ea2c42b58fbc55aded3e5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 112720, guid: 1d98da41b43ea2c42b58fbc55aded3e5, type: 3}
+      propertyPath: m_TagString
+      value: Asteroid
       objectReference: {fileID: 0}
     - target: {fileID: 418404, guid: 1d98da41b43ea2c42b58fbc55aded3e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -171,7 +175,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6055544, guid: 1d98da41b43ea2c42b58fbc55aded3e5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055544, guid: 1d98da41b43ea2c42b58fbc55aded3e5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21234608, guid: 1d98da41b43ea2c42b58fbc55aded3e5, type: 3}
       propertyPath: m_Enabled
@@ -558,25 +566,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735016764}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 627ca5c21f56e744eba59f1595f0f4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
---- !u!114 &735016770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735016764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ea21e3e4fcb0624f9e53fcb7f21cef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
 --- !u!1 &940186690
 GameObject:
   m_ObjectHideFlags: 0

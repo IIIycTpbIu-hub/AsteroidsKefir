@@ -62,7 +62,6 @@
      <Compile Include="Assets\Scripts\ScriptsTests\TestForse.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\TestForse2D.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\VisualRegimeChanger.cs" />
-     <Compile Include="Assets\Scripts\ShootSystem\BulletCollisionView.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\DamageController.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\BaseCustomDestoroyModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\BigAsteroidDestroyModel.cs" />
@@ -71,6 +70,7 @@
      <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\SmallAsteroidDestroyModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\UFODestroyModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\HealthModel.cs" />
+     <Compile Include="Assets\Scripts\ShootSystem\ObjectCollisionView.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\ShootModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\StrongWeaponController.cs" />
      <Compile Include="Assets\Scripts\StarsGenerator.cs" />

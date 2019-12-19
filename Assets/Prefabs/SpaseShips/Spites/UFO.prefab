@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 6055544}
   - component: {fileID: 5089810}
   - component: {fileID: 5250877954072243080}
+  - component: {fileID: -3145954026995744660}
+  - component: {fileID: 5884150362163622995}
   m_Layer: 0
   m_Name: UFO
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,3 +163,29 @@ MonoBehaviour:
   mesh: {fileID: -3640009273208903192, guid: c53c6e5e49e6f2449b33a6d7f531f3ee, type: 3}
   poligonMaterial: {fileID: 2100000, guid: 85649d7b6cc198d429bc01ccc192d79e, type: 2}
   col: {fileID: 0}
+--- !u!114 &-3145954026995744660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c9999759060d64b9129bb0a4665035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1
+--- !u!114 &5884150362163622995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea21e3e4fcb0624f9e53fcb7f21cef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1

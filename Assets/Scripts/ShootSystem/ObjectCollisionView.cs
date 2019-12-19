@@ -3,7 +3,7 @@ using System.Collections;
 
 //public delegate void WeaponEventHandler(GameObject weapon ,GameObject victim);
 
-public class BulletCollisionView : MonoBehaviour {
+public class ObjectCollisionView : MonoBehaviour {
 	
 	public int Damage;
 	//public WeaponEventHandler Hit;

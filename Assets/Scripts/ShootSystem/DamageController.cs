@@ -14,15 +14,23 @@ public class DamageController{
 
 	public void OnHit(GameObject weapon, GameObject victim)
 	{
-		IDestroyable destroyModel = victim.GetComponent<IDestroyable> ();
-		weapon.GetComponent<IDestroyable>().Destroy ();
-		if (destroyModel != null) {
-			bool killed = _healthModel.SetDamage (1, destroyModel);
-			if(killed)
+		if(weapon.tag != victim.tag)//одноименные объекты не должны наносить друг другу урон
+		{
+			IDestroyable weponDestroyModel = weapon.GetComponent<IDestroyable>();
+			IDestroyable victimDestroyModel = victim.GetComponent<IDestroyable> ();
+			if(weponDestroyModel != null)
 			{
-				GameManager.Instanse.GameEventSystem.DestroyObjectEventLaunch(weapon, victim);
+				weponDestroyModel.Destroy();
+			}
+			if (victimDestroyModel != null) {
+				bool killed = _healthModel.SetDamage (1, victimDestroyModel);
+				if(killed)
+				{
+					GameManager.Instanse.GameEventSystem.DestroyObjectEventLaunch(weapon, victim);
+				}
 			}
 		}
+		
 	}
 
 	public void OnDestroy(GameObject weapon, GameObject victim)

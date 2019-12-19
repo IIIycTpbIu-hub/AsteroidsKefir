@@ -17,9 +17,10 @@ GameObject:
   - component: {fileID: 11434556}
   - component: {fileID: 7134425890116803734}
   - component: {fileID: -7981500981804891691}
+  - component: {fileID: -2355747301612995318}
   m_Layer: 0
   m_Name: BigAsteroid_3
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +131,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -212,3 +213,16 @@ MonoBehaviour:
   mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   poligonMaterial: {fileID: 2100000, guid: 3977e4e810d04a34783468bc24eb86bb, type: 2}
   col: {fileID: 0}
+--- !u!114 &-2355747301612995318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c9999759060d64b9129bb0a4665035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1
