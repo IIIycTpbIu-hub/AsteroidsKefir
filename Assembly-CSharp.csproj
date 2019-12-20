@@ -75,7 +75,9 @@
      <Compile Include="Assets\Scripts\ShootSystem\ShootModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\StrongWeaponController.cs" />
      <Compile Include="Assets\Scripts\StarsGenerator.cs" />
-     <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithStrongWeaponCommand.cs" />
+     <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithLaserCommand.cs" />
+     <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithStrongBulletCommand.cs" />
+     <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithStrongLaserCommand.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithWeakWeaponCommand.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\GamePauseCommand.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\ICommand.cs" />

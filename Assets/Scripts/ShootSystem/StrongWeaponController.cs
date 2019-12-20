@@ -11,26 +11,16 @@ public class StrongWeaponController : MonoBehaviour {
 		GameManager.Instanse.GameEventSystem.TryToFireWithStrongWeapon += OnTryToFireWithStrongWeapon;
 	}
 
-	public void OnTryToFireWithStrongWeapon(int damage, GameObject param2)
+	public void OnTryToFireWithStrongWeapon(int damage, GameObject strongWeapon)
 	{
 		
 		if(GameManager.Instanse.avaibleStrongBullet != 0 && _shotModel.IsReadyToFire)
 		{
-			FireWithStrongWeapon ();
+			_shotModel.Fire(GameManager.Instanse.strongWeaponSpeed, strongWeapon);
+			GameManager.Instanse.avaibleStrongBullet--;
+			GameManager.Instanse.GameEventSystem.UpdateStrongBulletValueLaunch(GameManager.Instanse.avaibleStrongBullet);
 			StartCoroutine(AwaitForRecoverBullet());
 		}	
-	}
-
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-	void FireWithStrongWeapon()
-	{
-		_shotModel.FireWithStrongWeapon ();
-		GameManager.Instanse.avaibleStrongBullet--;
-		GameManager.Instanse.GameEventSystem.UpdateStrongBulletValueLaunch(GameManager.Instanse.avaibleStrongBullet);
 	}
 
 	IEnumerator AwaitForRecoverBullet()

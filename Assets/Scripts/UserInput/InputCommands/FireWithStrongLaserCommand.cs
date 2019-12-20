@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireWithStrongWeaponCommand : ICommand {
+public class FireWithLaserCommand : ICommand {
 
 	//ShootModel _shootModel;
 	GameObject param;
 
-	public FireWithStrongWeaponCommand ()
+	public FireWithLaserCommand ()
 	{
 		param = new GameObject ();
 	}
 
 	public void Execute()
 	{
+		param = GameManager.Instanse.strongWeaponPrefab;
 		GameManager.Instanse.GameEventSystem.TryToFireWithStrongWeaponLaunch (0, param);
 	}
 }

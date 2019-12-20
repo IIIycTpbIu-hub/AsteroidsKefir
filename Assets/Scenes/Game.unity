@@ -525,13 +525,15 @@ MonoBehaviour:
   strongWeaponPrefab: {fileID: 151764, guid: f75f7cd295a2de44ca19223cb98a8ced, type: 3}
   avaibleStrongBullet: 100
   strongWeaponSpeed: 80
+  strongWeaponLaserPrefab: {fileID: 8466947763467206909, guid: e6a5b8fd0417f5c40b6766928c9dd3bb,
+    type: 3}
   bigAsteroids:
   - {fileID: 124638, guid: e02807eeda2341f4ea919d12eea296fa, type: 3}
   - {fileID: 126930, guid: bb163b11a96ed7f4b9e46815fdb4a810, type: 3}
   - {fileID: 154908, guid: ba145e8fb66e74445a381c1e49c5292e, type: 3}
   smallAsteroids:
   - {fileID: 128454, guid: c61853d458bc4824ca31ee018f01f9f3, type: 3}
-  maxAsteroidsCountInSciene: 1
+  maxAsteroidsCountInSciene: 0
   asteroidsSpawnPointsObject: {fileID: 105464, guid: 846d1c8c2d638214b9fd57c24f1200dc,
     type: 3}
   StartGamePannel: {fileID: 2050841376}

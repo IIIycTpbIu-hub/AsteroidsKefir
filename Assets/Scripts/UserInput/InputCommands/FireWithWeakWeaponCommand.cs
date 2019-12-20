@@ -12,6 +12,8 @@ public class FireWithWeakWeaponCommand : ICommand {
 	
 	public void Execute()
 	{
-		_shoter.FireWithWeakWeapon ();
+		float speed = GameManager.Instanse.weakWeaponSpeed;
+		GameObject bulletPrefab = GameManager.Instanse.weakWeaponPrefab;
+		_shoter.Fire (speed, bulletPrefab);
 	}
 }

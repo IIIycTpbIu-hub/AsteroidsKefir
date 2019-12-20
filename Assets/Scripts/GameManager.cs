@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject strongWeaponPrefab;
 	public int avaibleStrongBullet;
 	public float strongWeaponSpeed;
+	public GameObject strongWeaponLaserPrefab;
 	public GameObject[] bigAsteroids;
 	public GameObject[] smallAsteroids;
 	public int maxAsteroidsCountInSciene;
@@ -121,8 +122,7 @@ public class GameManager : MonoBehaviour {
 		
 		GameObject player = Instantiate (playerPrefab) as GameObject;
 		_playerMovementModel = new PlayerMovementModel (player, rotationSpeed, movingSpeed);
-		_shotModel = new ShootModel (player.transform.GetChild(0).gameObject, weakWeaponPrefab,
-		                             strongWeaponPrefab, weakWeaponSpeed, strongWeaponSpeed, player);
+		_shotModel = new ShootModel (player);
 		_inputController = new UserInputController (_playerMovementModel, _shotModel);
 		_userInput = _inputController.GetUserInputView ();
 

@@ -41,9 +41,9 @@ public class GameEventSystem
 		DestroyObject (damage, victim);
 	}
 
-	public void TryToFireWithStrongWeaponLaunch(int damage, GameObject victim)
+	public void TryToFireWithStrongWeaponLaunch(int damage, GameObject weapon)
 	{
-		TryToFireWithStrongWeapon (damage, victim);
+		TryToFireWithStrongWeapon (damage, weapon);
 	}
 
 	public void UpdateStrongBulletValueLaunch(int value)

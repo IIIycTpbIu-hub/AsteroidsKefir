@@ -74,3 +74,7 @@ MonoBehaviour:
     prefab: {fileID: 7604805238658644497, guid: f64f106bc42ce7644b74b3de64164659,
       type: 3}
     count: 1
+  - name: laser
+    prefab: {fileID: 6282591819198785878, guid: e6a5b8fd0417f5c40b6766928c9dd3bb,
+      type: 3}
+    count: 1

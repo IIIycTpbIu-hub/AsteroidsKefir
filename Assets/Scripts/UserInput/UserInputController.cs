@@ -22,7 +22,8 @@ public class UserInputController
 		_commands.Add (KeyCode.A, new RotateLeftCommand (_playerMovModel));
 		_commands.Add (KeyCode.D, new RotateRightCommand (_playerMovModel));
 		_commands.Add (KeyCode.Space, new FireWithWeakWeaponCommand (_shootModel));
-		_commands.Add (KeyCode.R, new FireWithStrongWeaponCommand ());
+		_commands.Add (KeyCode.Mouse0, new FireWithStrongBulletCommand ());
+		_commands.Add(KeyCode.Mouse1, new FireWithStrongLaserCommand());
 		_commands.Add(KeyCode.Escape, new GamePauseCommand());
 	} 
 
@@ -43,7 +44,7 @@ public class UserInputController
 
 	public void OnKeyUp(KeyCode keyCode)
 	{
-		if (keyCode == KeyCode.Space || keyCode == KeyCode.R) {
+		if (keyCode == KeyCode.Space || keyCode == KeyCode.Mouse0 || keyCode == KeyCode.Mouse1) {
 			_shootModel.SetOnReadyToFire();
 		}
 	}
