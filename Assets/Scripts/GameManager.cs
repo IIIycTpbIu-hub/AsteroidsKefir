@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject playerPrefab;
 	public float movingSpeed;
 	public float rotationSpeed;
+	public GameObject awaitingControllerPrefab;
 	public GameObject strongWeaponController;
 	public GameObject weakWeaponPrefab;
 	public float weakWeaponSpeed;
@@ -133,6 +134,7 @@ public class GameManager : MonoBehaviour {
 		_gameEventSystem.UpdateStrongBulletValueLaunch(avaibleStrongBullet);
 		_scoreController = new ScoreController(ScoreDisplay);
 		//инициализируем спавн астероидов
+		Instantiate(awaitingControllerPrefab);
 		_asteroidsSpawnModel = new AsteroidsSpawnModel (asteroidsSpawnPointsObject);
 		_asteroidsSpawnController = new AsteroidsSpawnController (bigAsteroids, smallAsteroids,
 		                                                         _asteroidsSpawnModel);

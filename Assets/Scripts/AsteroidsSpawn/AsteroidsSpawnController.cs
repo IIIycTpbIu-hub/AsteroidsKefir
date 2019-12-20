@@ -19,15 +19,20 @@ public class AsteroidsSpawnController{
 		while (_currentAsteroidsValue < GameManager.Instanse.MaxAsteroidsCount) {
 			SpawnBigAsteroid();
 		}
+		GameManager.Instanse.GameEventSystem.AwaitComplit += OnAwaitComplite;
 	}
 
 	public void OnBigAsteroidDestroy(Vector2 deadPosition)
 	{
+		//добавить задержку спавна
+		
+		float newAsteroidSpawnTime = Random.Range(2f, 5f);
+		GameManager.Instanse.GameEventSystem.AwaitForAwhileLaunch(newAsteroidSpawnTime);
 		_currentAsteroidsValue--;
-		SpawnBigAsteroid ();
 		//спавним два маленьких астероида
 		SpawnSmallAsteroid (deadPosition);
 		SpawnSmallAsteroid (deadPosition);
+		
 	}
 
 	void SpawnBigAsteroid()
@@ -50,5 +55,10 @@ public class AsteroidsSpawnController{
 		int count = asteroidPrefabs.Length;
 		int randomIndex = Random.Range (0, count);
 		return asteroidPrefabs [randomIndex];
+	}
+
+	void OnAwaitComplite(float time)
+	{
+		SpawnBigAsteroid ();
 	}
 }

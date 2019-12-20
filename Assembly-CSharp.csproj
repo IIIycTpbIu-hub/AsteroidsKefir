@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AsteroidsSpawn\AsteroidsSpawnController.cs" />
      <Compile Include="Assets\Scripts\AsteroidsSpawn\AsteroidsSpawnModel.cs" />
+     <Compile Include="Assets\Scripts\AwaitingController.cs" />
      <Compile Include="Assets\Scripts\GameEventSystem.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\ObjectPull\ObjectPooling.cs" />
@@ -56,7 +57,6 @@
      <Compile Include="Assets\Scripts\ObjectScreenKeep\TransformOffScreen.cs" />
      <Compile Include="Assets\Scripts\ObjectScreenKeep\WrapScreen.cs" />
      <Compile Include="Assets\Scripts\ScoreController.cs" />
-     <Compile Include="Assets\Scripts\ScriptsTests\LightBurstSpawnerMover.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\Shot.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\Spawner.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\TestForse.cs" />
@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\ShootSystem\ShootModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\StrongWeaponController.cs" />
      <Compile Include="Assets\Scripts\StarsGenerator.cs" />
+     <Compile Include="Assets\Scripts\UFOMover.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithLaserCommand.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithStrongBulletCommand.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithStrongLaserCommand.cs" />
