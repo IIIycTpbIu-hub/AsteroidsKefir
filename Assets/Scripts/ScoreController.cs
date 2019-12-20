@@ -11,7 +11,7 @@ public class ScoreController
         _scoreDisplay = scoreDisplay.GetComponentInChildren<Text>();
     }
 
-    void OnDestroyObject(GameObject weapon, GameObject victim)
+    void OnDestroyObject(int damage, GameObject victim)
     {
         int scoreIncrement = 0;
         switch (victim.name)

@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour {
 		_damageController = new DamageController ();
 		//инициализируем игрока
 		
-		GameObject player = GameObject.Instantiate (playerPrefab) as GameObject;
+		GameObject player = Instantiate (playerPrefab) as GameObject;
 		_playerMovementModel = new PlayerMovementModel (player, rotationSpeed, movingSpeed);
 		_shotModel = new ShootModel (player.transform.GetChild(0).gameObject, weakWeaponPrefab,
 		                             strongWeaponPrefab, weakWeaponSpeed, strongWeaponSpeed, player);

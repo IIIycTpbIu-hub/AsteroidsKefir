@@ -15,7 +15,11 @@ public class SimpleDestroyModel : MonoBehaviour ,IDestroyable {
 	public void Destroy()
 	{
 		health = _initialHealth;
-		gameObject.GetComponent<PoolObject> ().ReturnToPool ();
+		PoolObject poolObj = gameObject.GetComponent<PoolObject> ();
+		if(poolObj != null)
+		{
+			poolObj.ReturnToPool();
+		}
 	}
 
 	public int GetHealth()

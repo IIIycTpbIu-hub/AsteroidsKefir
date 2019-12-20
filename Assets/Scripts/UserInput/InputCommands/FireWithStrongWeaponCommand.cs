@@ -13,6 +13,6 @@ public class FireWithStrongWeaponCommand : ICommand {
 
 	public void Execute()
 	{
-		GameManager.Instanse.GameEventSystem.TryToFireWithStrongWeaponLaunch (param, param);
+		GameManager.Instanse.GameEventSystem.TryToFireWithStrongWeaponLaunch (0, param);
 	}
 }

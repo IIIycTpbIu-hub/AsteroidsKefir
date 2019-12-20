@@ -6,15 +6,13 @@ using System.Collections;
 public class ObjectCollisionView : MonoBehaviour {
 	
 	public int Damage;
-	//public WeaponEventHandler Hit;
-	
-	void Start () {
-		//подписывает контроллер на себя
-		//Hit += GameManager.Instanse.DamageController.OnHit;
-	}
 	
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		GameManager.Instanse.GameEventSystem.HitEventLaunch (gameObject, other.gameObject);
+		if(other.gameObject.tag != tag)
+		{
+			GameManager.Instanse.GameEventSystem.HitEventLaunch (Damage, other.gameObject);
+		}
+		
 	}	
 }

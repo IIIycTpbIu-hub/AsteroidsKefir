@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class DamageController{
 	
@@ -12,28 +12,28 @@ public class DamageController{
 		GameManager.Instanse.GameEventSystem.DestroyObject += OnDestroy;
 	}
 
-	public void OnHit(GameObject weapon, GameObject victim)
+	public void OnHit(int damage, GameObject victim)
 	{
-		if(weapon.tag != victim.tag)//одноименные объекты не должны наносить друг другу урон
+		//if(objectA.tag != victim.tag)//одноименные объекты не должны наносить друг другу урон
 		{
-			IDestroyable weponDestroyModel = weapon.GetComponent<IDestroyable>();
-			IDestroyable victimDestroyModel = victim.GetComponent<IDestroyable> ();
-			if(weponDestroyModel != null)
+			// if(weapon.tag == "Asteroid" && victim.tag == "Bullet")
+			// {
+			// 	return;
+			// }
+			IDestroyable destroyModel =  victim.GetComponent<IDestroyable>();
+			if(destroyModel != null)
 			{
-				weponDestroyModel.Destroy();
-			}
-			if (victimDestroyModel != null) {
-				bool killed = _healthModel.SetDamage (1, victimDestroyModel);
-				if(killed)
-				{
-					GameManager.Instanse.GameEventSystem.DestroyObjectEventLaunch(weapon, victim);
-				}
-			}
+				bool killed = _healthModel.SetDamage (damage, destroyModel);
+					if(killed)
+					{
+						GameManager.Instanse.GameEventSystem.DestroyObjectEventLaunch(damage, victim);
+					}
+			}		
 		}
 		
 	}
 
-	public void OnDestroy(GameObject weapon, GameObject victim)
+	public void OnDestroy(int damage, GameObject victim)
 	{
 		IDestroyable component = victim.GetComponent<IDestroyable> ();
 		if (component is BigAsteroidDestroyModel) {

@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\SmallAsteroidDestroyModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\UFODestroyModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\HealthModel.cs" />
+     <Compile Include="Assets\Scripts\ShootSystem\Laser.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\ObjectCollisionView.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\ShootModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\StrongWeaponController.cs" />

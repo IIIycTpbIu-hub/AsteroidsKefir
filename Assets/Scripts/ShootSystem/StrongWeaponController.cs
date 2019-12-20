@@ -11,7 +11,7 @@ public class StrongWeaponController : MonoBehaviour {
 		GameManager.Instanse.GameEventSystem.TryToFireWithStrongWeapon += OnTryToFireWithStrongWeapon;
 	}
 
-	public void OnTryToFireWithStrongWeapon(GameObject param1, GameObject param2)
+	public void OnTryToFireWithStrongWeapon(int damage, GameObject param2)
 	{
 		
 		if(GameManager.Instanse.avaibleStrongBullet != 0 && _shotModel.IsReadyToFire)

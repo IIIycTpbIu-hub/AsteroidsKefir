@@ -135,7 +135,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 112720, guid: 1d98da41b43ea2c42b58fbc55aded3e5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 112720, guid: 1d98da41b43ea2c42b58fbc55aded3e5, type: 3}
       propertyPath: m_TagString
@@ -523,8 +523,8 @@ MonoBehaviour:
   weakWeaponPrefab: {fileID: 119898, guid: 8530bf792cfdf2b449840b6562e50414, type: 3}
   weakWeaponSpeed: 70
   strongWeaponPrefab: {fileID: 151764, guid: f75f7cd295a2de44ca19223cb98a8ced, type: 3}
-  avaibleStrongBullet: 3
-  strongWeaponSpeed: 100
+  avaibleStrongBullet: 100
+  strongWeaponSpeed: 80
   bigAsteroids:
   - {fileID: 124638, guid: e02807eeda2341f4ea919d12eea296fa, type: 3}
   - {fileID: 126930, guid: bb163b11a96ed7f4b9e46815fdb4a810, type: 3}

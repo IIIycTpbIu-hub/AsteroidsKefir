@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public delegate void UserInputEventHandler(KeyCode keyCode);
-public delegate void WeaponEventHandler(GameObject weapon ,GameObject victim);
+public delegate void WeaponEventHandler(int damage, GameObject victim);
 public delegate void UIPlayerPannelEventHandler(int value);
 public delegate void DisplayModeEventHandled(bool value);
 
@@ -31,19 +31,19 @@ public class GameEventSystem
 		KeyUp (keyCode);
 	}
 
-	public void HitEventLaunch(GameObject weapon, GameObject victim)
+	public void HitEventLaunch(int damage, GameObject victim)
 	{
-		Hit (weapon, victim);
+		Hit (damage, victim);
 	}
 
-	public void DestroyObjectEventLaunch(GameObject weapon, GameObject victim)
+	public void DestroyObjectEventLaunch(int damage, GameObject victim)
 	{
-		DestroyObject (weapon, victim);
+		DestroyObject (damage, victim);
 	}
 
-	public void TryToFireWithStrongWeaponLaunch(GameObject weapon, GameObject victim)
+	public void TryToFireWithStrongWeaponLaunch(int damage, GameObject victim)
 	{
-		TryToFireWithStrongWeapon (weapon, victim);
+		TryToFireWithStrongWeapon (damage, victim);
 	}
 
 	public void UpdateStrongBulletValueLaunch(int value)
