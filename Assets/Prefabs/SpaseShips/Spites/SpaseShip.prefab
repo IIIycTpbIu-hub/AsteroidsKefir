@@ -44,7 +44,8 @@ GameObject:
   - component: {fileID: 5037590}
   - component: {fileID: -8680121301667116318}
   - component: {fileID: 5351194724010683162}
-  - component: {fileID: 7924974180209049649}
+  - component: {fileID: 5899007622816900083}
+  - component: {fileID: -5009576717087143351}
   m_Layer: 0
   m_Name: SpaseShip
   m_TagString: Player
@@ -200,7 +201,7 @@ MonoBehaviour:
   mesh: {fileID: -3640009273208903192, guid: 591278dc7a7568c468c43d4b2b37c5f4, type: 3}
   poligonMaterial: {fileID: 2100000, guid: 11f44468b46f0b641a400201448c294d, type: 2}
   col: {fileID: 0}
---- !u!114 &7924974180209049649
+--- !u!114 &5899007622816900083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,7 +210,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 189228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bdfcc119d0415044b67601ec0cf6c35, type: 3}
+  m_Script: {fileID: 11500000, guid: c09f37bcb9ace0247a513efb17ec78cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 22
+  health: 3
+--- !u!114 &-5009576717087143351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c9999759060d64b9129bb0a4665035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1

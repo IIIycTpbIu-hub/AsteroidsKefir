@@ -32,7 +32,7 @@ public class PlayerPannelController
     {
         for (int i = 0; i < _healthRemain.Length; i++)
         {
-            if(i <= currentHealth) 
+            if(i <= currentHealth-1) 
             {
                 _healthRemain[i].gameObject.SetActive(true);
             }

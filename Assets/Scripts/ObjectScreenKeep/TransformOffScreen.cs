@@ -15,20 +15,13 @@ namespace Asteroids {
 		private float left;
 		private float right;
 
-		//===================================================
-		// UNITY METHODS
-		//===================================================
-
-		/// <summary>
-		/// Awake.
-		/// </summary>
 		public virtual void Awake() {
 			top = 0.0f - padding;
 			bottom = 1.0f + padding;
 			left = 0.0f - padding;
 			right = 1.0f + padding;
 
-			Debug.Log("Top: " + top + " bottom: " + bottom + " left: " + left + " right: " + right);
+			//Debug.Log("Top: " + top + " bottom: " + bottom + " left: " + left + " right: " + right);
 		}
 
 		public void CheckCoordinates() {

@@ -14,7 +14,11 @@ public abstract class BaseCustomDestoroyModel : MonoBehaviour, IDestroyable {
 	public void Destroy ()
 	{
 		CustomDestroyBehavior();
-		gameObject.GetComponent<PoolObject> ().ReturnToPool ();
+		PoolObject poolObjectComponent = gameObject.GetComponent<PoolObject> ();
+		if(poolObjectComponent != null)
+		{
+			poolObjectComponent.ReturnToPool();
+		}
 	}
 	public int GetHealth()
 	{

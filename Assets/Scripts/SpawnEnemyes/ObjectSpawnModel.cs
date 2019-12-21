@@ -76,7 +76,6 @@ public class ObjectSpawnModel {
 	{
 		float pointX = Random.Range (minX, maxX);
 		float pointY = Random.Range (minY, maxY);
-		Debug.Log (pointX + " " + pointY);
 		return new Vector2 (pointX, pointY);
 	}
 }
