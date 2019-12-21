@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AsteroidsSpawnModel {
+public class ObjectSpawnModel {
 
 	GameObject _spawnRootPoint;
 	int _rootPointChildsCount;
@@ -11,7 +11,7 @@ public class AsteroidsSpawnModel {
 	float _maxY;
 	float _minY;
 
-	public AsteroidsSpawnModel(GameObject spawnRootPoint)
+	public ObjectSpawnModel(GameObject spawnRootPoint)
 	{
 		_spawnRootPoint = spawnRootPoint;
 		_rootPointChildsCount = _spawnRootPoint.transform.childCount;
@@ -22,28 +22,33 @@ public class AsteroidsSpawnModel {
 	}
 
 
-	public void SpawnAsteroid(GameObject asteroidPrefab)
+	public GameObject SpawnObject(GameObject asteroidPrefab)
 	{
 		int randomElementIndex = Random.Range (0, _rootPointChildsCount);
-		GameObject asteroid = PoolManager.GetObject (asteroidPrefab.name,
+		GameObject spawingObject = PoolManager.GetObject (asteroidPrefab.name,
 		                                             _spawnPoints [randomElementIndex].transform.position,
 		                                             Quaternion.identity);
-		CalculateForseVectorsDiapazon (asteroid);
-		Vector2 forseVector = GenerateRandomVector2ForsePonint (_minX, _maxX, _minY, _maxY);
-		//Debug.Log(forseVector.ToString());
-		asteroid.GetComponent<Rigidbody2D> ().AddForce (forseVector, ForceMode2D.Impulse);
+		return spawingObject;
 	}
 
-	public void SpawnAsteroid(GameObject asteroidPrefab, Vector2 position)
+	public GameObject SpawnObject(GameObject objectPrefab, Vector2 position)
 	{
-		GameObject asteroid = PoolManager.GetObject (asteroidPrefab.name,
+		GameObject spawingObject = PoolManager.GetObject (objectPrefab.name,
 		                                             position, Quaternion.identity);
-		CalculateForseVectorsDiapazon (asteroid);
-		Vector2 forseVector = GenerateRandomVector2ForsePonint (_minX, _maxX, _minY, _maxY);
-		//Debug.Log(forseVector.ToString());
-		asteroid.GetComponent<Rigidbody2D> ().AddForce (forseVector, ForceMode2D.Impulse);
+		
+		return spawingObject;
 	}
 
+	public void AddForceToAnObject(GameObject forsingObject)
+	{
+		Rigidbody2D body = forsingObject.GetComponent<Rigidbody2D>();
+		if(body != null)
+		{
+			CalculateForseVectorsDiapazon (forsingObject);
+			Vector2 forseVector = GenerateRandomVector2ForsePonint (_minX, _maxX, _minY, _maxY);
+			body.AddForce(forseVector, ForceMode2D.Impulse);
+		}
+	}
 	void CalculateForseVectorsDiapazon(GameObject asteroid)
 	{
 		if (asteroid.transform.position.x > 0) {

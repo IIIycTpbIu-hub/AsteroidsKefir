@@ -45,8 +45,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AsteroidsSpawn\AsteroidsSpawnController.cs" />
-     <Compile Include="Assets\Scripts\AsteroidsSpawn\AsteroidsSpawnModel.cs" />
      <Compile Include="Assets\Scripts\AwaitingController.cs" />
      <Compile Include="Assets\Scripts\GameEventSystem.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -74,6 +72,8 @@
      <Compile Include="Assets\Scripts\ShootSystem\ObjectCollisionView.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\ShootModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\StrongWeaponController.cs" />
+     <Compile Include="Assets\Scripts\SpawnEnemyes\AsteroidsSpawnController.cs" />
+     <Compile Include="Assets\Scripts\SpawnEnemyes\ObjectSpawnModel.cs" />
      <Compile Include="Assets\Scripts\StarsGenerator.cs" />
      <Compile Include="Assets\Scripts\UFOMover.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithLaserCommand.cs" />

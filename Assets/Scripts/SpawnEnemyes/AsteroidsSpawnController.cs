@@ -1,20 +1,20 @@
 ﻿using UnityEngine;
-using System.Collections;
+
 
 public class AsteroidsSpawnController{
 
 
 	GameObject[] _bigAsteroidPrefabs;
 	GameObject[] _smallAsteroidPrefabs;
-	AsteroidsSpawnModel _asteroidsSpawnModel;
+	ObjectSpawnModel _spawnModel;
 	int _currentAsteroidsValue = 0;
 
 	public AsteroidsSpawnController(GameObject[] bigAsteroidPrefabs, GameObject[] smallAsteroidPrefabs,
-	                                AsteroidsSpawnModel asteroidsSpawnModel)
+	                                ObjectSpawnModel spawnModel)
 	{
 		_bigAsteroidPrefabs = bigAsteroidPrefabs;
 		_smallAsteroidPrefabs = smallAsteroidPrefabs;
-		_asteroidsSpawnModel = asteroidsSpawnModel;
+		_spawnModel = spawnModel;
 
 		while (_currentAsteroidsValue < GameManager.Instanse.MaxAsteroidsCount) {
 			SpawnBigAsteroid();
@@ -24,12 +24,10 @@ public class AsteroidsSpawnController{
 
 	public void OnBigAsteroidDestroy(Vector2 deadPosition)
 	{
-		//добавить задержку спавна
-		
 		float newAsteroidSpawnTime = Random.Range(2f, 5f);
 		GameManager.Instanse.GameEventSystem.AwaitForAwhileLaunch(newAsteroidSpawnTime);
 		_currentAsteroidsValue--;
-		//спавним два маленьких астероида
+		//спавним два маленьких астероида(осколка)
 		SpawnSmallAsteroid (deadPosition);
 		SpawnSmallAsteroid (deadPosition);
 		
@@ -39,15 +37,21 @@ public class AsteroidsSpawnController{
 	{
 		if (_currentAsteroidsValue < GameManager.Instanse.MaxAsteroidsCount) {
 			GameObject asteroid = ShooseRandomAsteroid(_bigAsteroidPrefabs);
-			_asteroidsSpawnModel.SpawnAsteroid(asteroid);
+			asteroid = _spawnModel.SpawnObject(asteroid);
+			_spawnModel.AddForceToAnObject(asteroid);
 			_currentAsteroidsValue++;
 		}
 	}
 
 	void SpawnSmallAsteroid(Vector2 position)
 	{
+		float x = Random.Range(-0.3f, 0.3f);
+		float y = Random.Range(-0.3f, 0.3f);
+		position.x += x;
+		position.y += y;
 		GameObject smallAsteroid = ShooseRandomAsteroid (_smallAsteroidPrefabs);
-		_asteroidsSpawnModel.SpawnAsteroid (smallAsteroid, position);
+		smallAsteroid = _spawnModel.SpawnObject (smallAsteroid, position);
+		_spawnModel.AddForceToAnObject(smallAsteroid);
 	}
 
 	GameObject ShooseRandomAsteroid(GameObject[] asteroidPrefabs)

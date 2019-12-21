@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
 	ShootModel _shotModel;
 	UserInputController _inputController;
 	DamageController _damageController;
-	AsteroidsSpawnModel _asteroidsSpawnModel;
+	ObjectSpawnModel _spawnModel;
 	AsteroidsSpawnController _asteroidsSpawnController;
 	GameEventSystem _gameEventSystem;
 
@@ -135,8 +135,8 @@ public class GameManager : MonoBehaviour {
 		_scoreController = new ScoreController(ScoreDisplay);
 		//инициализируем спавн астероидов
 		Instantiate(awaitingControllerPrefab);
-		_asteroidsSpawnModel = new AsteroidsSpawnModel (asteroidsSpawnPointsObject);
+		_spawnModel = new ObjectSpawnModel (asteroidsSpawnPointsObject);
 		_asteroidsSpawnController = new AsteroidsSpawnController (bigAsteroids, smallAsteroids,
-		                                                         _asteroidsSpawnModel);
+		                                                         _spawnModel);
 	}
 }
