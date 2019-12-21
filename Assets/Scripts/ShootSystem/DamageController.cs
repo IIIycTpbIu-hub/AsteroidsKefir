@@ -39,6 +39,10 @@ public class DamageController{
 		if (component is BigAsteroidDestroyModel) {
 			GameManager.Instanse.AsteroidsSpawnController.OnBigAsteroidDestroy (victim.transform.position);
 		}
+		if(component is UFODestroyModel)
+		{
+			GameManager.Instanse.UFOSpawnController.OnUFODestroy();
+		}
 		component.Destroy ();
 	}
 }

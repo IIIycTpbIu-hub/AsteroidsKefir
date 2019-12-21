@@ -28,6 +28,9 @@ public class ScoreController
             case "SmallAsteroid_1":
                 scoreIncrement = 150;
                 break;
+            case "UFO":
+                scoreIncrement = 125;
+                break;
         }
         GameManager.Instanse.Score += scoreIncrement;
         _scoreDisplay.text = GameManager.Instanse.Score.ToString();

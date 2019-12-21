@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\ShootSystem\StrongWeaponController.cs" />
      <Compile Include="Assets\Scripts\SpawnEnemyes\AsteroidsSpawnController.cs" />
      <Compile Include="Assets\Scripts\SpawnEnemyes\ObjectSpawnModel.cs" />
+     <Compile Include="Assets\Scripts\SpawnEnemyes\UFOSpawnController.cs" />
      <Compile Include="Assets\Scripts\StarsGenerator.cs" />
      <Compile Include="Assets\Scripts\UFOMover.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithLaserCommand.cs" />

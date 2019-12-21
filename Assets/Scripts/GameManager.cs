@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject[] bigAsteroids;
 	public GameObject[] smallAsteroids;
 	public int maxAsteroidsCountInSciene;
+	public GameObject[] UFOPrefabs;
+	public int maxUFOScieneCount;
 	public GameObject asteroidsSpawnPointsObject;
 
 	public GameObject StartGamePannel;
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour {
 	DamageController _damageController;
 	ObjectSpawnModel _spawnModel;
 	AsteroidsSpawnController _asteroidsSpawnController;
+	UFOSpawnController _ufoSpawnController;
 	GameEventSystem _gameEventSystem;
 
 	PlayerPannelController _playerPannel;
@@ -71,6 +74,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public AsteroidsSpawnController AsteroidsSpawnController { get {return _asteroidsSpawnController;}}
+
+	public UFOSpawnController UFOSpawnController {get {return _ufoSpawnController;}}
 
 	public int Score {get; set;}
 
@@ -136,7 +141,7 @@ public class GameManager : MonoBehaviour {
 		//инициализируем спавн астероидов
 		Instantiate(awaitingControllerPrefab);
 		_spawnModel = new ObjectSpawnModel (asteroidsSpawnPointsObject);
-		_asteroidsSpawnController = new AsteroidsSpawnController (bigAsteroids, smallAsteroids,
-		                                                         _spawnModel);
+		_asteroidsSpawnController = new AsteroidsSpawnController (_spawnModel);
+		_ufoSpawnController = new UFOSpawnController(_spawnModel);
 	}
 }

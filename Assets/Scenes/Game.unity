@@ -474,6 +474,9 @@ MonoBehaviour:
   smallAsteroids:
   - {fileID: 128454, guid: c61853d458bc4824ca31ee018f01f9f3, type: 3}
   maxAsteroidsCountInSciene: 3
+  UFOPrefabs:
+  - {fileID: 112720, guid: 1d98da41b43ea2c42b58fbc55aded3e5, type: 3}
+  maxUFOScieneCount: 1
   asteroidsSpawnPointsObject: {fileID: 105464, guid: 846d1c8c2d638214b9fd57c24f1200dc,
     type: 3}
   StartGamePannel: {fileID: 2050841376}
@@ -1049,7 +1052,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Polygon view
+  m_Text: 'Sprite view
 
 '
 --- !u!222 &2089989997

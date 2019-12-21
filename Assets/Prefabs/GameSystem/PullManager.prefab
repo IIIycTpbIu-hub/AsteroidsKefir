@@ -78,3 +78,7 @@ MonoBehaviour:
     prefab: {fileID: 6282591819198785878, guid: e6a5b8fd0417f5c40b6766928c9dd3bb,
       type: 3}
     count: 1
+  - name: UFO
+    prefab: {fileID: -8530086229005841462, guid: 1d98da41b43ea2c42b58fbc55aded3e5,
+      type: 3}
+    count: 2

@@ -3,17 +3,15 @@
 
 public class AsteroidsSpawnController{
 
-
 	GameObject[] _bigAsteroidPrefabs;
 	GameObject[] _smallAsteroidPrefabs;
 	ObjectSpawnModel _spawnModel;
 	int _currentAsteroidsValue = 0;
 
-	public AsteroidsSpawnController(GameObject[] bigAsteroidPrefabs, GameObject[] smallAsteroidPrefabs,
-	                                ObjectSpawnModel spawnModel)
+	public AsteroidsSpawnController(ObjectSpawnModel spawnModel)
 	{
-		_bigAsteroidPrefabs = bigAsteroidPrefabs;
-		_smallAsteroidPrefabs = smallAsteroidPrefabs;
+		_bigAsteroidPrefabs = GameManager.Instanse.bigAsteroids;
+		_smallAsteroidPrefabs = GameManager.Instanse.smallAsteroids;;
 		_spawnModel = spawnModel;
 
 		while (_currentAsteroidsValue < GameManager.Instanse.MaxAsteroidsCount) {
