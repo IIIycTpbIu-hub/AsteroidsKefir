@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace Asteroids {
-
-	public class WrapScreen : TransformOffscreen {
-
-		private void Update()
+	public class WrapScreen : TransformOffscreen
+	{
+		private void OnBecameInvisible() 
 		{
-			CheckCoordinates();
-			if(isOffscreen)
+			if(gameObject.activeInHierarchy)
 			{
-				transform.position = Camera.main.ViewportToWorldPoint( viewportPos );
+				CheckCoordinates();
+				if(isOffscreen)
+				{
+					transform.position = Camera.main.ViewportToWorldPoint( viewportPos );
+				}
 			}
+			
 		}
-
-
 	}
 }

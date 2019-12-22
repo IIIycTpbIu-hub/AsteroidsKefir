@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject weakWeaponPrefab;
 	public float weakWeaponSpeed;
 	public GameObject strongWeaponPrefab;
-	public int avaibleStrongBullet;
+	public int maxSrongBulletsCount;
 	public float strongWeaponSpeed;
 	public GameObject strongWeaponLaserPrefab;
 	public GameObject[] bigAsteroids;
@@ -67,6 +67,8 @@ public class GameManager : MonoBehaviour {
 	public int CurrentAsteroidsCount {get; set;}
 
 	public int CurrentUFOCount {get; set;}
+
+	public int CurrentStrongBulletCount {get; set;}
 
 	public DamageController DamageController
 	{
@@ -166,7 +168,7 @@ public class GameManager : MonoBehaviour {
 		//инициализируем UI
 		_playerPannel = new PlayerPannelController(PlayerPannel);
 		_uiController = new UIController();
-		_gameEventSystem.UpdateStrongBulletValueLaunch(avaibleStrongBullet);
+		_gameEventSystem.UpdateStrongBulletValueLaunch(maxSrongBulletsCount);
 		_scoreController = new ScoreController(ScoreDisplay);
 		//инициализируем спавн астероидов
 		Instantiate(awaitingControllerPrefab);
