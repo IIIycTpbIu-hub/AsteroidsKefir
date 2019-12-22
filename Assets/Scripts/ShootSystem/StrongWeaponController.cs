@@ -7,7 +7,7 @@ public class StrongWeaponController : MonoBehaviour {
 	ShootModel _shotModel;
 	// Use this for initialization
 	void Start () {
-		_shotModel = GameManager.Instanse.ShotModel;
+		_shotModel = GameManager.Instanse.ShootModel;
 		GameManager.Instanse.GameEventSystem.TryToFireWithStrongWeapon += OnTryToFireWithStrongWeapon;
 	}
 

@@ -22,12 +22,12 @@ public class UserInputController
 		GameManager.Instanse.GameEventSystem.FinishGame += OnFinishGame;
 
 		//инициализируем команды
-		_commands.Add (KeyCode.W, new MoveTowardsCommand (_playerMovModel));
-		_commands.Add (KeyCode.A, new RotateLeftCommand (_playerMovModel));
-		_commands.Add (KeyCode.D, new RotateRightCommand (_playerMovModel));
+		_commands.Add (KeyCode.UpArrow, new MoveTowardsCommand (_playerMovModel));
+		_commands.Add (KeyCode.LeftArrow, new RotateLeftCommand (_playerMovModel));
+		_commands.Add (KeyCode.RightArrow, new RotateRightCommand (_playerMovModel));
 		_commands.Add (KeyCode.Space, new FireWithWeakWeaponCommand (_shootModel));
-		_commands.Add (KeyCode.Mouse0, new FireWithStrongBulletCommand ());
-		_commands.Add(KeyCode.Mouse1, new FireWithStrongLaserCommand());
+		_commands.Add (KeyCode.LeftShift, new FireWithStrongBulletCommand ());
+		_commands.Add(KeyCode.LeftControl, new FireWithStrongLaserCommand());
 		_commands.Add(KeyCode.Escape, new GamePauseCommand());
 	} 
 
@@ -49,7 +49,7 @@ public class UserInputController
 
 	public void OnKeyUp(KeyCode keyCode)
 	{
-		if (keyCode == KeyCode.Space || keyCode == KeyCode.Mouse0 || keyCode == KeyCode.Mouse1) {
+		if (keyCode == KeyCode.Space || keyCode == KeyCode.LeftShift || keyCode == KeyCode.LeftControl) {
 			_shootModel.SetOnReadyToFire();
 		}
 	}

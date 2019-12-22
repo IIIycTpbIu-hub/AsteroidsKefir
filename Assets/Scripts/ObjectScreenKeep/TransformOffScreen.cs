@@ -20,8 +20,6 @@ namespace Asteroids {
 			bottom = 1.0f + padding;
 			left = 0.0f - padding;
 			right = 1.0f + padding;
-
-			//Debug.Log("Top: " + top + " bottom: " + bottom + " left: " + left + " right: " + right);
 		}
 
 		public void CheckCoordinates() {

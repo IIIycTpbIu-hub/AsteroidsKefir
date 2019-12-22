@@ -64,6 +64,10 @@ public class GameManager : MonoBehaviour {
 
 	public int MaxAsteroidsCount {get {return _maxAsteroidsCount;} }
 
+	public int CurrentAsteroidsCount {get; set;}
+
+	public int CurrentUFOCount {get; set;}
+
 	public DamageController DamageController
 	{
 		get {
@@ -81,9 +85,11 @@ public class GameManager : MonoBehaviour {
 
 	public int Score {get; set;}
 
-	public ShootModel ShotModel {get {return _shotModel;}}
+	public ShootModel ShootModel {get {return _shotModel;}}
 
 	public bool IsGamePaused {get; set;}
+
+	public bool IsGameOver {get; set;}
 
 	public void SetPoligonalView(bool val)
 	{
@@ -105,6 +111,7 @@ public class GameManager : MonoBehaviour {
 		GameEventSystem.StartGameLaunch();
 		_player.transform.position = new Vector2(0, 0);
 		_player.transform.rotation = Quaternion.identity;
+		IsGameOver = false;
 		
 	}
 

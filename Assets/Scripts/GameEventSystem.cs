@@ -5,7 +5,7 @@ public delegate void WeaponEventHandler(int damage, GameObject victim);
 public delegate void UIPlayerPannelEventHandler(int value);
 public delegate void DisplayModeEventHandled(bool value);
 public delegate void AwaitEventHandler(float seconds);
-public delegate void StartFinishGameHandler();
+public delegate void GameStateHandler();
 public class GameEventSystem
 {
 
@@ -21,8 +21,9 @@ public class GameEventSystem
 	public event DisplayModeEventHandled SwitchDisplayMode;
 	public event AwaitEventHandler AwaitForAwhile;
 	public event AwaitEventHandler AwaitComplit;
-	public event StartFinishGameHandler StartGame;
-	public event StartFinishGameHandler FinishGame; 
+	public event GameStateHandler StartGame;
+	public event GameStateHandler PauseGame;
+	public event GameStateHandler FinishGame; 
 
 	public void KeyPressEventLaunch(KeyCode keyCode)
 	{
@@ -77,6 +78,11 @@ public class GameEventSystem
 	public void StartGameLaunch()
 	{
 		StartGame();
+	}
+
+	public void PauseGameLaunch()
+	{
+		PauseGame();
 	}
 
 	public void FinishGameLaunch()

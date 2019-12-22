@@ -7,12 +7,15 @@ public class BigAsteroidDestroyModel : BaseCustomDestoroyModel {
 	void Start()
 	{
 		_initialHealth = health;
-		//DestroyObject += GameManager.Instanse.DamageController.OnDestroy;
 	}
 
 	public override void CustomDestroyBehavior ()
 	{
 		health = _initialHealth;
 		GameObject shot = PoolManager.GetObject ("BigAsteroidExplosion", transform.position, transform.rotation);
+	}
+
+	private void OnDisable() {
+		GameManager.Instanse.CurrentAsteroidsCount--;
 	}
 }

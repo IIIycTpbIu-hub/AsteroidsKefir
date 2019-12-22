@@ -6,38 +6,36 @@ public class AsteroidsSpawnController{
 	GameObject[] _bigAsteroidPrefabs;
 	GameObject[] _smallAsteroidPrefabs;
 	ObjectSpawnModel _spawnModel;
-	int _currentAsteroidsValue = 0;
 
 	public AsteroidsSpawnController(ObjectSpawnModel spawnModel)
 	{
 		_bigAsteroidPrefabs = GameManager.Instanse.bigAsteroids;
 		_smallAsteroidPrefabs = GameManager.Instanse.smallAsteroids;;
 		_spawnModel = spawnModel;
-
-		while (_currentAsteroidsValue < GameManager.Instanse.MaxAsteroidsCount) {
-			SpawnBigAsteroid();
-		}
+		GameManager.Instanse.GameEventSystem.StartGame += OnStartGame;
 		GameManager.Instanse.GameEventSystem.AwaitComplit += OnAwaitComplite;
+		GameManager.Instanse.CurrentAsteroidsCount = 0;
 	}
 
 	public void OnBigAsteroidDestroy(Vector2 deadPosition)
 	{
-		float newAsteroidSpawnTime = Random.Range(2f, 5f);
-		GameManager.Instanse.GameEventSystem.AwaitForAwhileLaunch(newAsteroidSpawnTime);
-		_currentAsteroidsValue--;
-		//спавним два маленьких астероида(осколка)
-		SpawnSmallAsteroid (deadPosition);
-		SpawnSmallAsteroid (deadPosition);
-		
+		if(!GameManager.Instanse.IsGameOver)
+		{
+			float newAsteroidSpawnTime = Random.Range(2f, 5f);
+			GameManager.Instanse.GameEventSystem.AwaitForAwhileLaunch(newAsteroidSpawnTime);
+			//спавним два маленьких астероида(осколка)
+			SpawnSmallAsteroid (deadPosition);
+			SpawnSmallAsteroid (deadPosition);
+		}		
 	}
 
 	void SpawnBigAsteroid()
 	{
-		if (_currentAsteroidsValue < GameManager.Instanse.MaxAsteroidsCount) {
+		if (GameManager.Instanse.CurrentAsteroidsCount < GameManager.Instanse.MaxAsteroidsCount) {
 			GameObject asteroid = ShooseRandomAsteroid(_bigAsteroidPrefabs);
 			asteroid = _spawnModel.SpawnObject(asteroid);
 			_spawnModel.AddForceToAnObject(asteroid);
-			_currentAsteroidsValue++;
+			GameManager.Instanse.CurrentAsteroidsCount++;
 		}
 	}
 
@@ -59,8 +57,18 @@ public class AsteroidsSpawnController{
 		return asteroidPrefabs [randomIndex];
 	}
 
+	void OnStartGame()
+	{
+		while (GameManager.Instanse.CurrentAsteroidsCount < GameManager.Instanse.MaxAsteroidsCount) {
+			SpawnBigAsteroid();
+		}
+	}
 	void OnAwaitComplite(float time)
 	{
-		SpawnBigAsteroid ();
+		if(!GameManager.Instanse.IsGameOver)
+		{
+			SpawnBigAsteroid ();
+		}
+		
 	}
 }

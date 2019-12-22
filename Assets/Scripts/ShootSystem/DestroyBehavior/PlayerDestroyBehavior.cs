@@ -8,6 +8,7 @@ public class PlayerDestroyBehavior : BaseCustomDestoroyModel
         health = _initialHealth;
         GameManager.Instanse.GameEventSystem.FinishGameLaunch();
         gameObject.SetActive(false);
+        GameManager.Instanse.IsGameOver = true;
     }
 
     void Start() 

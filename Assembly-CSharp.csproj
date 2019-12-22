@@ -55,11 +55,11 @@
      <Compile Include="Assets\Scripts\ObjectScreenKeep\TransformOffScreen.cs" />
      <Compile Include="Assets\Scripts\ObjectScreenKeep\WrapScreen.cs" />
      <Compile Include="Assets\Scripts\ScoreController.cs" />
+     <Compile Include="Assets\Scripts\ScriptsTests\Invisible.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\Shot.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\Spawner.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\TestForse.cs" />
      <Compile Include="Assets\Scripts\ScriptsTests\TestForse2D.cs" />
-     <Compile Include="Assets\Scripts\ScriptsTests\VisualRegimeChanger.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\DamageController.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\BaseCustomDestoroyModel.cs" />
      <Compile Include="Assets\Scripts\ShootSystem\DestroyBehavior\BigAsteroidDestroyModel.cs" />
@@ -93,6 +93,7 @@
      <Compile Include="Assets\Scripts\UserInput\PlayerMovementModel.cs" />
      <Compile Include="Assets\Scripts\UserInput\UserInputController.cs" />
      <Compile Include="Assets\Scripts\UserInput\UserInputView.cs" />
+     <Compile Include="Assets\Scripts\VisualRegimeChanger.cs" />
      <Compile Include="Assets\Test.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/UnityProjects/AsteroidsKefir/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

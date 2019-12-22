@@ -1,10 +1,22 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 [AddComponentMenu("Pool/PoolObject")]
 public class PoolObject : MonoBehaviour
 {
-	public void ReturnToPool () {
+	public void ReturnToPool () 
+	{
 		gameObject.SetActive (false);
+	}
+
+	void Start() 
+	{
+		GameManager.Instanse.GameEventSystem.FinishGame += OnGameFinish;
+	}
+	void OnGameFinish()
+	{
+		if(gameObject.activeInHierarchy)
+		{
+			ReturnToPool();
+		}
 	}
 } 

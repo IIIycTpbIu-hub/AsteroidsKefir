@@ -14,20 +14,7 @@ public class VisualRegimeChanger : MonoBehaviour
     bool _isSpriteMode = true;
     void Start()
     {
-        GameManager.Instanse.GameEventSystem.SwitchDisplayMode +=OnSwitchDisplayMode;
-    }
-
-    private void Awake() {
-        
-    }
-
-    private void OnBecameVisible() {
-        bool newIsSpriteMode = GameManager.Instanse.GetPoligonalView();
-        if(_isSpriteMode != newIsSpriteMode)
-        {
-            OnSwitchDisplayMode(newIsSpriteMode);
-            _isSpriteMode = newIsSpriteMode;
-        }
+        GameManager.Instanse.GameEventSystem.SwitchDisplayMode += OnSwitchDisplayMode;
     }
 
     private void OnSwitchDisplayMode(bool isSpriteMode)
@@ -49,8 +36,6 @@ public class VisualRegimeChanger : MonoBehaviour
        meshRenderer.material = poligonMaterial;
        MeshFilter meshFilter = gameObject.AddComponent<MeshFilter>();
        meshFilter.mesh = mesh;
-       //transform.localScale = new Vector3(0.3f,0.3f,0.3f);
-       //transform.Rotate(switchedRotation);
     }
 
     private void SpriteVisualization()
@@ -60,8 +45,6 @@ public class VisualRegimeChanger : MonoBehaviour
         gameObject.AddComponent<SpriteRenderer>();
         SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = Sprite;
-        //transform.localScale = new Vector3(10, 10, 10);
-        //transform.Rotate(new Vector3(0, 0, 180));
     }
 
     private void ReactivateObject()
@@ -70,13 +53,4 @@ public class VisualRegimeChanger : MonoBehaviour
         gameObject.SetActive(true);
     }
 }
-
-
-
-        //gameObject.AddComponent<SpriteRenderer>();
-        //SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
-        //sr.sprite = sprite;
-        //Destroy(gameObject.GetComponent<SpriteRenderer>());
-       // gameObject.SetActive(false);
-        //gameObject.SetActive(true);
 

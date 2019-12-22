@@ -2,13 +2,10 @@ using UnityEngine;
 
 public class GamePauseCommand : ICommand {
 	bool _isKeyPressed = false;
-    GameObject _pausePannel;
 
     public GamePauseCommand()
     {
         GameManager.Instanse.GameEventSystem.KeyUp += OnKeyUP;
-        //
-        _pausePannel = GameManager.Instanse.PauseDisplay;
     }
 	public void Execute()
 	{
@@ -19,13 +16,13 @@ public class GamePauseCommand : ICommand {
             {
                 Time.timeScale = 1;
                 GameManager.Instanse.IsGamePaused = false;
-                _pausePannel.SetActive(false);
+                GameManager.Instanse.GameEventSystem.PauseGameLaunch();
             }
 		    else
             {
                 Time.timeScale = 0;
                 GameManager.Instanse.IsGamePaused = true;
-                _pausePannel.SetActive(true);
+                GameManager.Instanse.GameEventSystem.PauseGameLaunch();
             }
             _isKeyPressed = true;
         }

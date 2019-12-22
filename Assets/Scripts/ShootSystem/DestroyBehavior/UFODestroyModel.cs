@@ -9,6 +9,10 @@ public class UFODestroyModel : BaseCustomDestoroyModel {
 		_initialHealth = health;
 	}
 
+	void OnDisable() {
+		GameManager.Instanse.CurrentUFOCount--;
+	}
+	
 	public override void CustomDestroyBehavior ()
 	{
 		health = _initialHealth;
