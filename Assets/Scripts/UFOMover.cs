@@ -12,9 +12,13 @@ public class UFOMover : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 dir = _player.transform.position;
-		Vector2 diraction = new Vector2 (dir.x - transform.position.x, dir.y - transform.position.y);
-		transform.up = diraction;
-		gameObject.transform.position = Vector2.MoveTowards (transform.position, _player.transform.position, Time.deltaTime * speed);
+		if(_player != null)
+		{
+			Vector3 dir = _player.transform.position;
+			Vector2 diraction = new Vector2 (dir.x - transform.position.x, dir.y - transform.position.y);
+			transform.up = diraction;
+			gameObject.transform.position = Vector2.MoveTowards (transform.position, _player.transform.position, Time.deltaTime * speed);
+		}
+		
 	}	
 }

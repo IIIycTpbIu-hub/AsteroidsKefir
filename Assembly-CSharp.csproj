@@ -77,7 +77,10 @@
      <Compile Include="Assets\Scripts\SpawnEnemyes\ObjectSpawnModel.cs" />
      <Compile Include="Assets\Scripts\SpawnEnemyes\UFOSpawnController.cs" />
      <Compile Include="Assets\Scripts\StarsGenerator.cs" />
+     <Compile Include="Assets\Scripts\StartGame.cs" />
      <Compile Include="Assets\Scripts\UFOMover.cs" />
+     <Compile Include="Assets\Scripts\UISystem\PlayerPannelController.cs" />
+     <Compile Include="Assets\Scripts\UISystem\UIController.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithLaserCommand.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithStrongBulletCommand.cs" />
      <Compile Include="Assets\Scripts\UserInput\InputCommands\FireWithStrongLaserCommand.cs" />
@@ -90,7 +93,6 @@
      <Compile Include="Assets\Scripts\UserInput\PlayerMovementModel.cs" />
      <Compile Include="Assets\Scripts\UserInput\UserInputController.cs" />
      <Compile Include="Assets\Scripts\UserInput\UserInputView.cs" />
-     <Compile Include="Assets\Scripts\UserUISystem\PlayerPannelController.cs" />
      <Compile Include="Assets\Test.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/UnityProjects/AsteroidsKefir/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

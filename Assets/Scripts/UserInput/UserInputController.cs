@@ -9,13 +9,17 @@ public class UserInputController
 	Dictionary<KeyCode, ICommand> _commands = new Dictionary<KeyCode, ICommand> ();
 	ShootModel _shootModel;
 
+	bool _isInputEnable = true;
+
 	public UserInputController (PlayerMovementModel movementModel, ShootModel shotModel)
 	{
 		_playerMovModel = movementModel;
 		_shootModel = shotModel;
 		_userInputView = new UserInputView (this);
+		GameManager.Instanse.GameEventSystem.StartGame += OnStartGame;
 		GameManager.Instanse.GameEventSystem.KeyPress += OnKeyPressed;
 		GameManager.Instanse.GameEventSystem.KeyUp += OnKeyUp;
+		GameManager.Instanse.GameEventSystem.FinishGame += OnFinishGame;
 
 		//инициализируем команды
 		_commands.Add (KeyCode.W, new MoveTowardsCommand (_playerMovModel));
@@ -29,7 +33,8 @@ public class UserInputController
 
 	public void OnKeyPressed(KeyCode keyCode)
 	{
-		if (_commands.ContainsKey (keyCode)) {
+		if (_commands.ContainsKey (keyCode) && _isInputEnable) 
+		{
 			ICommand currentCommand = _commands [keyCode];
 			if(!GameManager.Instanse.IsGamePaused)//если не пауза
 			{
@@ -52,5 +57,15 @@ public class UserInputController
 	public UserInputView GetUserInputView()
 	{
 		return _userInputView;
+	}
+
+	void OnStartGame()
+	{
+		_isInputEnable = true;
+	}
+
+	void OnFinishGame()
+	{
+		_isInputEnable = false;
 	}
 }

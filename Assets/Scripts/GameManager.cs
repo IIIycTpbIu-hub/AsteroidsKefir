@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour {
 
 	
 	bool _isSpriteMode = true;
+	bool _isGameInitialized = false;
+	GameObject _player;
 	UserInputView _userInput;
 	PlayerMovementModel _playerMovementModel;
 	ShootModel _shotModel;
@@ -43,7 +45,7 @@ public class GameManager : MonoBehaviour {
 	GameEventSystem _gameEventSystem;
 
 	PlayerPannelController _playerPannel;
-
+	UIController _uiController;
 	ScoreController _scoreController;
 	static GameManager _instanse;
 	static int _maxAsteroidsCount;
@@ -94,6 +96,23 @@ public class GameManager : MonoBehaviour {
 		return _isSpriteMode;
 	}
 
+	public void StartGame()
+	{
+		if(!_isGameInitialized)
+		{
+			InitializeGame();
+		}
+		GameEventSystem.StartGameLaunch();
+		_player.transform.position = new Vector2(0, 0);
+		_player.transform.rotation = Quaternion.identity;
+		
+	}
+
+	public void EndGame()
+	{
+		Application.Quit();
+	}
+
 	void Awake()
 	{
 		_maxAsteroidsCount = maxAsteroidsCountInSciene;
@@ -109,12 +128,15 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InitializeGame ();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		_userInput.Update ();
+		if(_userInput != null)
+		{
+			_userInput.Update ();
+		}
 	}
 
 	void InitializeGame()
@@ -126,9 +148,9 @@ public class GameManager : MonoBehaviour {
 		_damageController = new DamageController ();
 		//инициализируем игрока
 		
-		GameObject player = Instantiate (playerPrefab) as GameObject;
-		_playerMovementModel = new PlayerMovementModel (player, rotationSpeed, movingSpeed);
-		_shotModel = new ShootModel (player);
+		_player = Instantiate (playerPrefab) as GameObject;
+		_playerMovementModel = new PlayerMovementModel (_player, rotationSpeed, movingSpeed);
+		_shotModel = new ShootModel (_player);
 		_inputController = new UserInputController (_playerMovementModel, _shotModel);
 		_userInput = _inputController.GetUserInputView ();
 
@@ -136,6 +158,7 @@ public class GameManager : MonoBehaviour {
 
 		//инициализируем UI
 		_playerPannel = new PlayerPannelController(PlayerPannel);
+		_uiController = new UIController();
 		_gameEventSystem.UpdateStrongBulletValueLaunch(avaibleStrongBullet);
 		_scoreController = new ScoreController(ScoreDisplay);
 		//инициализируем спавн астероидов
@@ -143,5 +166,9 @@ public class GameManager : MonoBehaviour {
 		_spawnModel = new ObjectSpawnModel (asteroidsSpawnPointsObject);
 		_asteroidsSpawnController = new AsteroidsSpawnController (_spawnModel);
 		_ufoSpawnController = new UFOSpawnController(_spawnModel);
+
+		_isGameInitialized = true;
 	}
+
+	
 }
