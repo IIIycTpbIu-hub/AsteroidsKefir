@@ -1,32 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerDestroyBehavior : BaseCustomDestoroyModel
 {
+    int _initialHealth;
     public override void CustomDestroyBehavior()
     {
-        
+        health = _initialHealth;
+        GameManager.Instanse.GameEventSystem.FinishGameLaunch();
+        gameObject.SetActive(false);
     }
 
     void Start() 
     {
+        GameManager.Instanse.GameEventSystem.StartGame += OnStartGame;
         GameManager.Instanse.GameEventSystem.Hit += OnHit;
+        _initialHealth = health;
     }
 
     void OnHit(int damage, GameObject victim)
     {
         if(victim.tag == gameObject.tag)
         {
-            Debug.Log(health);
             GameManager.Instanse.GameEventSystem.UpdateHealthValueLaunch(health);
         }
     }
 
-    IEnumerator TemporaryOff()
+    void OnStartGame()
     {
-        yield return new WaitForSeconds(3f);
-        this.enabled = true;
-        gameObject.GetComponent<ObjectCollisionView>().enabled = true;
+        gameObject.SetActive(true);
     }
 }
