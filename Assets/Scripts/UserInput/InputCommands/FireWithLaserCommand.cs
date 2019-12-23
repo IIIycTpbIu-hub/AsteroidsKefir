@@ -5,7 +5,6 @@
 /// </summary>
 public class FireWithStrongLaserCommand : ICommand {
 
-	//ShootModel _shootModel;
 	GameObject _weapon;
 
 	public FireWithStrongLaserCommand ()

@@ -21,9 +21,12 @@ public class GameEventSystem
 
 	public event UIPlayerPannelEventHandler UpdateStrongBulletValue;
 	public event UIPlayerPannelEventHandler UpdateHealthValue;
+
 	public event DisplayModeEventHandled SwitchDisplayMode;
+
 	public event AwaitEventHandler AwaitForAwhile;
 	public event AwaitEventHandler AwaitComplit;
+	
 	public event GameStateHandler StartGame;
 	public event GameStateHandler PauseGame;
 	public event GameStateHandler FinishGame; 

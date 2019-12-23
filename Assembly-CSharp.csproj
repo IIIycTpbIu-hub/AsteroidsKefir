@@ -94,7 +94,6 @@
      <Compile Include="Assets\Scripts\UserInput\UserInputController.cs" />
      <Compile Include="Assets\Scripts\UserInput\UserInputView.cs" />
      <Compile Include="Assets\Scripts\VisualRegimeChanger.cs" />
-     <Compile Include="Assets\Test.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/UnityProjects/AsteroidsKefir/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

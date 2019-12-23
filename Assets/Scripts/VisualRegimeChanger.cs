@@ -9,7 +9,6 @@ public class VisualRegimeChanger : MonoBehaviour
     public Material spriteMaterial;
     public Mesh mesh;
     public Material poligonMaterial;
-    public Collider2D col;
 
 
     bool _isSpriteMode = true;

@@ -6,8 +6,6 @@
 public abstract class BaseCustomDestoroyModel : MonoBehaviour, IDestroyable {
 
 	public int health;
-	public WeaponEventHandler DestroyObj;
-
 		
 	public void TakeDamage (int damage)
 	{
