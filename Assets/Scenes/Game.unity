@@ -463,7 +463,7 @@ MonoBehaviour:
   weakWeaponPrefab: {fileID: 119898, guid: 8530bf792cfdf2b449840b6562e50414, type: 3}
   weakWeaponSpeed: 70
   strongWeaponPrefab: {fileID: 151764, guid: f75f7cd295a2de44ca19223cb98a8ced, type: 3}
-  avaibleStrongBullet: 3
+  maxSrongBulletsCount: 3
   strongWeaponSpeed: 80
   strongWeaponLaserPrefab: {fileID: 8466947763467206909, guid: e6a5b8fd0417f5c40b6766928c9dd3bb,
     type: 3}

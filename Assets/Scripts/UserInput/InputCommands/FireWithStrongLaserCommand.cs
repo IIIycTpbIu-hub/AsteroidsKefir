@@ -13,7 +13,7 @@ public class FireWithLaserCommand : ICommand {
 
 	public void Execute()
 	{
-		param = GameManager.Instanse.strongWeaponPrefab;
+		param = GameManager.Instanse.StrongWeaponPrefab;
 		GameManager.Instanse.GameEventSystem.TryToFireWithStrongWeaponLaunch (0, param);
 	}
 }

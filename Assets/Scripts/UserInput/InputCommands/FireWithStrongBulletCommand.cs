@@ -8,7 +8,7 @@ public class FireWithStrongBulletCommand : ICommand {
 
 	public FireWithStrongBulletCommand ()
 	{
-		_weapon = GameManager.Instanse.strongWeaponPrefab;;
+		_weapon = GameManager.Instanse.StrongWeaponPrefab;;
 	}
 
 	public void Execute()

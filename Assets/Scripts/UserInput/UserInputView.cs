@@ -1,15 +1,11 @@
 using UnityEngine;
-using System.Collections;
 using System;
-using System.Collections.Generic;
 
-//public delegate void UserInputEventHandler(KeyCode keyCode);
-
+/// <summary>
+/// Слушает пользовательский ввод с клавиатуры, передает клавиши контроллеру ввода
+/// </summary>
 public class UserInputView
 {
-	//public event UserInputEventHandler KeyPress;
-	//public event UserInputEventHandler KeyUp;
-
 	UserInputController _inputController;
 
 	public UserInputView(UserInputController inputController)
@@ -26,24 +22,10 @@ public class UserInputView
 	public void OnKeyUp(KeyCode keyCode)
 	{
 		GameManager.Instanse.GameEventSystem.KeyUpEventLaunch (keyCode);
-		//KeyUp (keyCode);
 	}
 
-	public void Update()
-	{
-		//Debug.Log(Input.inputString);
-//		if (Input.anyKey) {
-//			foreach(KeyCode keyCode in Enum.GetValues(typeof(KeyCode)))
-//			{
-//				if (Input.GetKey(keyCode))
-//				{
-//					OnKeyPressed(keyCode);
-//				}
-//
-//			}
-//
-//		}
-		
+	public void ListenToKeysInput()
+	{		
 		foreach(KeyCode keyCode in Enum.GetValues(typeof(KeyCode)))
 		{
 			if (Input.GetKey(keyCode))

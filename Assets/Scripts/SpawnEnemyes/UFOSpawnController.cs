@@ -18,7 +18,7 @@ public class UFOSpawnController
 
     void SpawnUFO()
     {
-        if(GameManager.Instanse.CurrentUFOCount < GameManager.Instanse.maxUFOScieneCount && !GameManager.Instanse.IsGameOver)
+        if(GameManager.Instanse.CurrentUFOCount < GameManager.Instanse.MaxUFOScieneCount && !GameManager.Instanse.IsGameOver)
         {
             GameObject ufo = ShooseRandomUFO();
             ufo = _spawnModel.SpawnObject(ufo);

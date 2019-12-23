@@ -8,7 +8,7 @@ public class FireWithStrongLaserCommand : ICommand {
 
 	public FireWithStrongLaserCommand ()
 	{
-		_weapon = GameManager.Instanse.strongWeaponLaserPrefab;
+		_weapon = GameManager.Instanse.StrongWeaponLaserPrefab;
 	}
 
 	public void Execute()

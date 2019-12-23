@@ -9,8 +9,8 @@ public class AsteroidsSpawnController{
 
 	public AsteroidsSpawnController(ObjectSpawnModel spawnModel)
 	{
-		_bigAsteroidPrefabs = GameManager.Instanse.bigAsteroids;
-		_smallAsteroidPrefabs = GameManager.Instanse.smallAsteroids;;
+		_bigAsteroidPrefabs = GameManager.Instanse.BigAsteroids;
+		_smallAsteroidPrefabs = GameManager.Instanse.SmallAsteroids;;
 		_spawnModel = spawnModel;
 		GameManager.Instanse.GameEventSystem.StartGame += OnStartGame;
 		GameManager.Instanse.GameEventSystem.AwaitComplit += OnAwaitComplite;
