@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Модель спауна объектов типа PoolObject
+/// </summary>
 public class ObjectSpawnModel {
 
 	GameObject _spawnRootPoint;

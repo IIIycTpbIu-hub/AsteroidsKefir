@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Модель уничтожения НЛО.
+/// </summary>
 public class UFODestroyModel : BaseCustomDestoroyModel {
 
 	int _initialHealth;
@@ -9,13 +12,15 @@ public class UFODestroyModel : BaseCustomDestoroyModel {
 		_initialHealth = health;
 	}
 
-	void OnDisable() {
-		GameManager.Instanse.CurrentUFOCount--;
-	}
-	
 	public override void CustomDestroyBehavior ()
 	{
 		health = _initialHealth;
 		GameObject shot = PoolManager.GetObject ("UFOExplosion", transform.position, transform.rotation);
 	}
+
+	void OnDisable() {
+		GameManager.Instanse.CurrentUFOCount--;
+	}
+	
+	
 }

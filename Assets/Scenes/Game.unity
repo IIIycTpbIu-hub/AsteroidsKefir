@@ -451,33 +451,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e54433326657f44a872b7d05b3362dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPoolSetup: {fileID: 11478898, guid: dc7004b1cae1783408a9bbcca74bc198, type: 3}
-  starsGenerator: {fileID: 152522, guid: 3831669a6abaec940be68ad8f9fac4e2, type: 3}
-  playerPrefab: {fileID: 189228, guid: 569c9324cd03487469f47bb0ecb6911d, type: 3}
-  movingSpeed: 12
-  rotationSpeed: 2
-  awaitingControllerPrefab: {fileID: 3943859394094971342, guid: b2953030d9acaad43adfe24a5b884d12,
+  ObjectPoolSetup: {fileID: 11478898, guid: dc7004b1cae1783408a9bbcca74bc198, type: 3}
+  StarsGenerator: {fileID: 152522, guid: 3831669a6abaec940be68ad8f9fac4e2, type: 3}
+  PlayerPrefab: {fileID: 189228, guid: 569c9324cd03487469f47bb0ecb6911d, type: 3}
+  MovingSpeed: 13
+  RotationSpeed: 2
+  AwaitingControllerPrefab: {fileID: 3943859394094971342, guid: b2953030d9acaad43adfe24a5b884d12,
     type: 3}
-  strongWeaponController: {fileID: 137914, guid: 89e7b83907f793b4e9367f28dc4affc1,
+  StrongWeaponController: {fileID: 137914, guid: 89e7b83907f793b4e9367f28dc4affc1,
     type: 3}
-  weakWeaponPrefab: {fileID: 119898, guid: 8530bf792cfdf2b449840b6562e50414, type: 3}
-  weakWeaponSpeed: 70
-  strongWeaponPrefab: {fileID: 151764, guid: f75f7cd295a2de44ca19223cb98a8ced, type: 3}
-  maxSrongBulletsCount: 3
-  strongWeaponSpeed: 80
-  strongWeaponLaserPrefab: {fileID: 8466947763467206909, guid: e6a5b8fd0417f5c40b6766928c9dd3bb,
+  WeakWeaponPrefab: {fileID: 119898, guid: 8530bf792cfdf2b449840b6562e50414, type: 3}
+  WeakWeaponSpeed: 70
+  StrongWeaponPrefab: {fileID: 151764, guid: f75f7cd295a2de44ca19223cb98a8ced, type: 3}
+  MaxSrongBulletsCount: 3
+  StrongWeaponSpeed: 90
+  StrongWeaponLaserPrefab: {fileID: 8466947763467206909, guid: e6a5b8fd0417f5c40b6766928c9dd3bb,
     type: 3}
-  bigAsteroids:
+  BigAsteroids:
   - {fileID: 124638, guid: e02807eeda2341f4ea919d12eea296fa, type: 3}
   - {fileID: 126930, guid: bb163b11a96ed7f4b9e46815fdb4a810, type: 3}
   - {fileID: 154908, guid: ba145e8fb66e74445a381c1e49c5292e, type: 3}
-  smallAsteroids:
+  SmallAsteroids:
   - {fileID: 128454, guid: c61853d458bc4824ca31ee018f01f9f3, type: 3}
-  maxAsteroidsCountInSciene: 3
+  MaxAsteroidsCountInSciene: 3
   UFOPrefabs:
   - {fileID: 112720, guid: 1d98da41b43ea2c42b58fbc55aded3e5, type: 3}
-  maxUFOScieneCount: 1
-  asteroidsSpawnPointsObject: {fileID: 105464, guid: 846d1c8c2d638214b9fd57c24f1200dc,
+  MaxUFOScieneCount: 1
+  AsteroidsSpawnPointsObject: {fileID: 105464, guid: 846d1c8c2d638214b9fd57c24f1200dc,
     type: 3}
   StartGamePannel: {fileID: 2050841376}
   PlayerPannel: {fileID: 1457778502}
@@ -934,7 +934,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 591898714}
-        m_MethodName: SetPoligonalView
+        m_MethodName: SwitchViualRegime
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

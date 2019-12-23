@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
-
+﻿/// <summary>
+/// Команда попорота вправо
+/// </summary>
 public class RotateRightCommand : ICommand
 {
 	PlayerMovementModel _model;

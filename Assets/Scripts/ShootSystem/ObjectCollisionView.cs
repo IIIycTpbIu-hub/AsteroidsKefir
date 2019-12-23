@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-//public delegate void WeaponEventHandler(GameObject weapon ,GameObject victim);
-
+/// <summary>
+/// Реагирует на столкновения между объеквтов и вызывает событие столкновения объектов. Доложна находиться на всех объектах, наносящих и получающих урон
+/// </summary>
 public class ObjectCollisionView : MonoBehaviour {
 	
 	public int Damage;

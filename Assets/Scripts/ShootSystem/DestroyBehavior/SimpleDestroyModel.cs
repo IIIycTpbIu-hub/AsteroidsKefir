@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Модель простого уничтожения объекта (На объекте должен находиться PoolObject).
+/// </summary>
 public class SimpleDestroyModel : MonoBehaviour ,IDestroyable {
 
 	public int health;
 	int _initialHealth;
-	//public WeaponEventHandler DestroyObject;
 
+	void Start()
+	{
+		_initialHealth = health;
+	}
 	public void TakeDamage (int damage)
 	{
 		health -= damage;
@@ -27,9 +32,5 @@ public class SimpleDestroyModel : MonoBehaviour ,IDestroyable {
 		return health;
 	}
 
-	void Start()
-	{
-		_initialHealth = health;
-		//DestroyObject += GameManager.Instanse.DamageController.OnDestroy;
-	}
+	
 }

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Команда выстрела из лазера
+/// </summary>
 public class FireWithStrongLaserCommand : ICommand {
 
 	//ShootModel _shootModel;

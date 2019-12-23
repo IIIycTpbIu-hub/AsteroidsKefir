@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Команда выстрела из лазера
+/// </summary>
 public class FireWithLaserCommand : ICommand {
 
-	//ShootModel _shootModel;
-	GameObject param;
+	GameObject _nullParam;
 
 	public FireWithLaserCommand ()
 	{
-		param = new GameObject ();
+		_nullParam = new GameObject ();
 	}
 
 	public void Execute()
 	{
-		param = GameManager.Instanse.StrongWeaponPrefab;
-		GameManager.Instanse.GameEventSystem.TryToFireWithStrongWeaponLaunch (0, param);
+		_nullParam = GameManager.Instanse.StrongWeaponPrefab;
+		GameManager.Instanse.GameEventSystem.TryToFireWithStrongWeaponLaunch (0, _nullParam);
 	}
 }

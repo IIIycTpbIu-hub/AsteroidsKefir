@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Команда выстрела из тяжелого оружия
+/// </summary>
 public class FireWithStrongBulletCommand : ICommand {
 
-	//ShootModel _shootModel;
 	GameObject _weapon;
 
 	public FireWithStrongBulletCommand ()

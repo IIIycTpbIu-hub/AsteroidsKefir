@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Модель движения корабля. 
+/// </summary>
 public class PlayerMovementModel
 {
 	GameObject _player;

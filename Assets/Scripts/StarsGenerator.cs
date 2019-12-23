@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Генератор звездного неба
+/// </summary>
 public class StarsGenerator : MonoBehaviour {
 
 	public float minX;
@@ -15,7 +17,6 @@ public class StarsGenerator : MonoBehaviour {
 		Destroy(gameObject, 1f);
 	}
 	
-
 	void GenerateStarsSky()
 	{
 		GameObject stars = new GameObject();

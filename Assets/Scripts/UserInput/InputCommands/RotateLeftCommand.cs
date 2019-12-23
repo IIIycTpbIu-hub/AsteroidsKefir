@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
-
+﻿/// <summary>
+/// Команда поворота влево
+/// </summary>
 public class RotateLeftCommand : ICommand
 {
 	PlayerMovementModel _model;

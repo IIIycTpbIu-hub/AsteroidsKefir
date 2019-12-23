@@ -217,18 +217,6 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 //-----------------Unity methods-------------------------
-
-	public void SwitchViualRegime(bool val)
-	{
-		_isSpriteMode = val;
-		GameEventSystem.SwitchDisplayModeLaunch(_isSpriteMode);
-	}
-
-	public bool GetPoligonalView()
-	{
-		return _isSpriteMode;
-	}
-
 	public void StartGame()
 	{
 		if(!_isGameInitialized)
@@ -248,29 +236,44 @@ public class GameManager : MonoBehaviour {
 	}
 
 	
+	public void SwitchViualRegime(bool val)
+	{
+		_isSpriteMode = val;
+		GameEventSystem.SwitchDisplayModeLaunch(_isSpriteMode);
+	}
+
+	public bool GetPoligonalView()
+	{
+		return _isSpriteMode;
+	}
+
 
 	void InitializeGame()
 	{
 		//инициализируем пулл объектов
 		Instantiate (ObjectPoolSetup);
+
 		//инициализируем звездное небо
 		Instantiate (StarsGenerator);
-		_damageController = new DamageController ();
 		//инициализируем игрока
-		
 		_player = Instantiate (PlayerPrefab) as GameObject;
 		_playerMovementModel = new PlayerMovementModel (_player, RotationSpeed, MovingSpeed);
+
+		//инициализируем стрельбу и урон
 		_shotModel = new ShootModel (_player);
+		_damageController = new DamageController ();
+		Instantiate (StrongWeaponController);
+
+		//инициализируем пользовательский ввод
 		_inputController = new UserInputController (_playerMovementModel, _shotModel);
 		_userInput = _inputController.GetUserInputView ();
-
-		Instantiate (StrongWeaponController);
 
 		//инициализируем UI
 		_playerPannel = new PlayerPannelController(PlayerPannel);
 		_uiController = new UIController();
 		_gameEventSystem.UpdateStrongBulletValueLaunch(MaxSrongBulletsCount);
 		_scoreController = new ScoreController(ScoreDisplay);
+		
 		//инициализируем спавн астероидов
 		Instantiate(AwaitingControllerPrefab);
 		_spawnModel = new ObjectSpawnModel (AsteroidsSpawnPointsObject);
@@ -280,5 +283,4 @@ public class GameManager : MonoBehaviour {
 		_isGameInitialized = true;
 	}
 
-	
 }

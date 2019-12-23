@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Контроллер пользовательского UI. Выполняет переключение визульных представлений в зависимости от состояния игры
+/// </summary>
 public class UIController
 {
     GameObject _startPannel;

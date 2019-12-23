@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Команда установки и снятия игры с паузы
+/// </summary>
 public class GamePauseCommand : ICommand {
 	bool _isKeyPressed = false;
 

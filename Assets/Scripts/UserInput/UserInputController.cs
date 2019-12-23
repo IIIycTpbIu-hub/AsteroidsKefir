@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// Контроллер ввода с клавиатуры
+/// </summary>
 public class UserInputController
 {
 	UserInputView _userInputView;
 	PlayerMovementModel _playerMovModel;
-	Dictionary<KeyCode, ICommand> _commands = new Dictionary<KeyCode, ICommand> ();
+	Dictionary<KeyCode, ICommand> _commandsDictionary = new Dictionary<KeyCode, ICommand> ();
 	ShootModel _shootModel;
 
 	bool _isInputEnable = true;
@@ -22,20 +24,25 @@ public class UserInputController
 		GameManager.Instanse.GameEventSystem.FinishGame += OnFinishGame;
 
 		//инициализируем команды
-		_commands.Add (KeyCode.UpArrow, new MoveTowardsCommand (_playerMovModel));
-		_commands.Add (KeyCode.LeftArrow, new RotateLeftCommand (_playerMovModel));
-		_commands.Add (KeyCode.RightArrow, new RotateRightCommand (_playerMovModel));
-		_commands.Add (KeyCode.Space, new FireWithWeakWeaponCommand (_shootModel));
-		_commands.Add (KeyCode.LeftShift, new FireWithStrongBulletCommand ());
-		_commands.Add(KeyCode.LeftControl, new FireWithStrongLaserCommand());
-		_commands.Add(KeyCode.Escape, new GamePauseCommand());
+		_commandsDictionary.Add (KeyCode.UpArrow, new MoveTowardsCommand (_playerMovModel));
+		_commandsDictionary.Add (KeyCode.LeftArrow, new RotateLeftCommand (_playerMovModel));
+		_commandsDictionary.Add (KeyCode.RightArrow, new RotateRightCommand (_playerMovModel));
+		_commandsDictionary.Add (KeyCode.Space, new FireWithWeakWeaponCommand (_shootModel));
+		_commandsDictionary.Add (KeyCode.LeftShift, new FireWithStrongBulletCommand ());
+		_commandsDictionary.Add(KeyCode.LeftControl, new FireWithStrongLaserCommand());
+		_commandsDictionary.Add(KeyCode.Escape, new GamePauseCommand());
 	} 
+
+	public UserInputView GetUserInputView()
+	{
+		return _userInputView;
+	}
 
 	public void OnKeyPressed(KeyCode keyCode)
 	{
-		if (_commands.ContainsKey (keyCode) && _isInputEnable) 
+		if (_commandsDictionary.ContainsKey (keyCode) && _isInputEnable) 
 		{
-			ICommand currentCommand = _commands [keyCode];
+			ICommand currentCommand = _commandsDictionary [keyCode];
 			if(!GameManager.Instanse.IsGamePaused)//если не пауза
 			{
 				currentCommand.Execute ();
@@ -52,11 +59,6 @@ public class UserInputController
 		if (keyCode == KeyCode.Space || keyCode == KeyCode.LeftShift || keyCode == KeyCode.LeftControl) {
 			_shootModel.SetOnReadyToFire();
 		}
-	}
-
-	public UserInputView GetUserInputView()
-	{
-		return _userInputView;
 	}
 
 	void OnStartGame()

@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Контроллер счета. Изменяет счет и отображает его на панели
+/// </summary>
 public class ScoreController
 {
     Text _scoreDisplay;
@@ -44,13 +47,11 @@ public class ScoreController
     {
         GameManager.Instanse.Score = 0;
         _scoreDisplay.text = "0";
-        //GameManager.Instanse.GameOverDisplay.SetActive(false);
     }
 
     void OnFinfishGame()
     {
        _gameOverScoreDisplay.text = "Score : " + GameManager.Instanse.Score.ToString();
-       //GameManager.Instanse.GameOverDisplay.SetActive(true);
     }
 
 }

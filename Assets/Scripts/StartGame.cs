@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Начало игры. Ожидает пробела для инициализации
+/// </summary>
 public class StartGame : MonoBehaviour
 {
     void Update()

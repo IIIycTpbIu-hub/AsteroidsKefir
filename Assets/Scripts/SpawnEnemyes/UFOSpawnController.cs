@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Контроллер спауна НЛО. Выполняет спаун и учет
+/// </summary>
 public class UFOSpawnController
 {
     GameObject[] _ufoPrefabs;

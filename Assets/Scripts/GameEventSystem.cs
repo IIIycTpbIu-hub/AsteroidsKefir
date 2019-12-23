@@ -6,6 +6,9 @@ public delegate void UIPlayerPannelEventHandler(int value);
 public delegate void DisplayModeEventHandled(bool value);
 public delegate void AwaitEventHandler(float seconds);
 public delegate void GameStateHandler();
+/// <summary>
+/// Менеджер игровых событий
+/// </summary>
 public class GameEventSystem
 {
 

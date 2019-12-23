@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Модель уничтожения маленького астероида.
+/// </summary>
 public class SmallAsteroidDestroyModel : BaseCustomDestoroyModel {
 
 	int _initialHealth;

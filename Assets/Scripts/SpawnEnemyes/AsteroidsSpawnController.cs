@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
-
+/// <summary>
+/// Контроллер спауна астероидов. Выполняет спавн и учет астероидов
+/// </summary>
 public class AsteroidsSpawnController{
 
 	GameObject[] _bigAsteroidPrefabs;

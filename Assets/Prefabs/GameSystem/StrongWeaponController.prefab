@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610579eb08435ac44af17832aced7ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoRecoverTime: 20
+  AmmoRecoverTime: 20

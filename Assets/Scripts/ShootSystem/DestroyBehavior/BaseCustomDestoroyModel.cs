@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Базовый класс модели уничтожения объекта с изменяемым поведением после смерти. Потомок должен переопределить его.
+/// </summary>
 public abstract class BaseCustomDestoroyModel : MonoBehaviour, IDestroyable {
 
 	public int health;

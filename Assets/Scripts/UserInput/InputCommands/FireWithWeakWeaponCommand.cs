@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Команда выстрела из слабого оружия
+/// </summary>
 public class FireWithWeakWeaponCommand : ICommand {
 
 	ShootModel _shoter;

@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Переключает режимы визуальных представлений
+/// </summary>
 public class VisualRegimeChanger : MonoBehaviour
 {
     public Sprite Sprite;
@@ -15,18 +18,14 @@ public class VisualRegimeChanger : MonoBehaviour
         GameManager.Instanse.GameEventSystem.SwitchDisplayMode += OnSwitchDisplayMode;
     }
 
-    private void OnSwitchDisplayMode(bool isSpriteMode)
-    {
-        if(isSpriteMode)
+    private void OnBecameVisible() {
+        bool newIsSpriteMode = GameManager.Instanse.GetPoligonalView();
+        if(_isSpriteMode != newIsSpriteMode)
         {
-            SpriteVisualization();
+            OnSwitchDisplayMode(newIsSpriteMode);
         }
-        else
-        {
-            PoliginVisualization();
-        }
-        _isSpriteMode = isSpriteMode;
     }
+
     private void PoliginVisualization()
     {
        DestroyImmediate(gameObject.GetComponent<SpriteRenderer>());
@@ -45,10 +44,17 @@ public class VisualRegimeChanger : MonoBehaviour
         sr.sprite = Sprite;
     }
 
-    private void ReactivateObject()
+      private void OnSwitchDisplayMode(bool isSpriteMode)
     {
-        gameObject.SetActive(false);
-        gameObject.SetActive(true);
+        if(isSpriteMode)
+        {
+            SpriteVisualization();
+        }
+        else
+        {
+            PoliginVisualization();
+        }
+        _isSpriteMode = isSpriteMode;
     }
 }
 

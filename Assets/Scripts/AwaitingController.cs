@@ -1,7 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Контроллер ожидания. Запускает корутину и уведомляет о ее завершении.(Не удачное решение. Используется только контроллером астероидов)
+/// </summary>
 public class AwaitingController : MonoBehaviour
 {
     float _awaitingTime;
@@ -11,22 +13,18 @@ public class AwaitingController : MonoBehaviour
         GameManager.Instanse.GameEventSystem.AwaitForAwhile += OnAwaitForTime;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void OnAwaitForTime(float time)
-    {
-        _awaitingTime = time;
-        StartCoroutine("AwaitForTime");
-    } 
-
     IEnumerator AwaitForTime()
     {
         yield return new WaitForSeconds(_awaitingTime);
         GameManager.Instanse.GameEventSystem.AwaitComplitLaunch(_awaitingTime);
         _awaitingTime = 0f;
     }
+    
+    void OnAwaitForTime(float time)
+    {
+        _awaitingTime = time;
+        StartCoroutine("AwaitForTime");
+    } 
+
+    
 }

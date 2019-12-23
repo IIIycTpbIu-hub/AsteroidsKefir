@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Модель стрельбы
+/// </summary>
 public class ShootModel {
 
 	public bool IsReadyToFire { get {return _isReadyToFire;}}

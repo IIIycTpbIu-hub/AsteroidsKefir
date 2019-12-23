@@ -1,6 +1,6 @@
-using UnityEngine;
-using System.Collections;
-
+/// <summary>
+/// Интерфейс уничтожаемого объекта.
+/// </summary>
 public interface IDestroyable {
 
 	int GetHealth();

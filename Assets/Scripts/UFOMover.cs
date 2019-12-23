@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Движение объекта в сторону игрока
+/// </summary>
 public class UFOMover : MonoBehaviour {
-
-
 	public float speed;
 	GameObject _player;
-	// Use this for initialization
+	
 	void Start () {
 		_player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if(_player != null)
 		{

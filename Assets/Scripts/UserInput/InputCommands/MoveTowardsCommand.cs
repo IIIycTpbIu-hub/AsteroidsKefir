@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
-
+﻿/// <summary>
+/// Команда полета прямо
+/// </summary>
 public class MoveTowardsCommand : ICommand
 {
 	PlayerMovementModel _model;

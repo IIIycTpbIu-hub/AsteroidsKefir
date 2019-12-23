@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
-
+﻿/// <summary>
+/// Модель здоровья.
+/// </summary>
 public class HealthModel {
 	
 	public bool SetDamage(int damage, IDestroyable victim)

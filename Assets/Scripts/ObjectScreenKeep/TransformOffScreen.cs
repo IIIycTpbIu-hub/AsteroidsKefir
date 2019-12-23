@@ -16,14 +16,10 @@ namespace Asteroids {
 		private float right;
 
 		public virtual void Awake() {
-			// top = 0.0f - padding;
-			// bottom = 1.0f + padding;
-			// left = 0.0f - padding;
-			// right = 1.0f + padding;
-			top = 0.0f;
-			bottom = 1.0f;
-			left = 0.0f;
-			right = 1.0f;
+			top = 0.0f - padding;
+			bottom = 1.0f + padding;
+			left = 0.0f - padding;
+			right = 1.0f + padding;
 		}
 
 		public void CheckCoordinates() {
@@ -33,19 +29,19 @@ namespace Asteroids {
 
 			// check x
 			if( viewportPos.x < left ) {
-				viewportPos.x = right + padding;
+				viewportPos.x = right;
 				isOffscreen = true;
 			} else if( viewportPos.x > right ) {
-				viewportPos.x = left - padding;
+				viewportPos.x = left;
 				isOffscreen = true;
 			}
 
 			// check y
 			if( viewportPos.y < top ) {
-				viewportPos.y = bottom + padding;
+				viewportPos.y = bottom;
 				isOffscreen = true;
 			} else if( viewportPos.y > bottom ) {
-				viewportPos.y = top - padding;
+				viewportPos.y = top;
 				isOffscreen = true;
 			}
 		}

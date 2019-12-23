@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Менеджер пулов объектов
+/// </summary>
 public static class PoolManager 
 {
 	private static PoolFields[] _pools;

@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Контроллер визуального отображения текущего состояния здоровья и кол=ва выстрелов игрока. При изменении значений обновляет UI
+/// </summary>
 public class PlayerPannelController
 {
     Text _bulletsRemain;

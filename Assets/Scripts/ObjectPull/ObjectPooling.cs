@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// Пулл объектов одного типа
+/// </summary>
 public class ObjectPooling 
 {
 	List<PoolObject> _poolObjects;
@@ -46,6 +48,7 @@ public class ObjectPooling
 		}
 		//добавить проверку на то, что выданы все объекты из пула
 		return null; */
+		//решил не делать, вместо этого перевыдаем первый выданный объект
 	}
 
 	void AddObject(PoolObject objectPrefab, Transform parent)
