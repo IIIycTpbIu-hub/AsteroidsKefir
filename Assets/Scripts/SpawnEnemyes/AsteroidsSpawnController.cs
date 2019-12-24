@@ -16,11 +16,13 @@ public class AsteroidsSpawnController{
 		_spawnModel = spawnModel;
 		GameManager.Instanse.GameEventSystem.StartGame += OnStartGame;
 		GameManager.Instanse.GameEventSystem.AwaitComplit += OnAwaitComplite;
+		GameManager.Instanse.GameEventSystem.FinishGame += OnFinishGame;
 		GameManager.Instanse.CurrentAsteroidsCount = 0;
 	}
 
 	public void OnBigAsteroidDestroy(Vector2 deadPosition)
 	{
+		GameManager.Instanse.CurrentAsteroidsCount--;
 		if(!GameManager.Instanse.IsGameOver)
 		{
 			float newAsteroidSpawnTime = Random.Range(2f, 5f);
@@ -64,6 +66,11 @@ public class AsteroidsSpawnController{
 		while (GameManager.Instanse.CurrentAsteroidsCount < GameManager.Instanse.MaxAsteroidsCount) {
 			SpawnBigAsteroid();
 		}
+	}
+
+	void OnFinishGame()
+	{
+		GameManager.Instanse.CurrentAsteroidsCount = 0;
 	}
 	void OnAwaitComplite(float time)
 	{

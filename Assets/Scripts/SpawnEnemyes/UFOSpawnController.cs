@@ -16,6 +16,7 @@ public class UFOSpawnController
         _spawnModel = spawnModel;
         _ufoPrefabs = GameManager.Instanse.UFOPrefabs;
         GameManager.Instanse.GameEventSystem.DestroyObject += OnDestroyObject;
+        GameManager.Instanse.GameEventSystem.FinishGame += OnFinishGame;
         GameManager.Instanse.CurrentUFOCount = 0;
     }
 
@@ -38,7 +39,7 @@ public class UFOSpawnController
 
     public void OnUFODestroy()
     {
-        //GameManager.Instanse.CurrentUFOCount--;
+        GameManager.Instanse.CurrentUFOCount--;
     }
     void OnDestroyObject(int dmg, GameObject victim)
     {
@@ -49,8 +50,16 @@ public class UFOSpawnController
 
         if(_killedAsteroids == _killedAsteroidsBeforeSpawn)
         {
-            SpawnUFO();
+            while(GameManager.Instanse.CurrentUFOCount < GameManager.Instanse.MaxUFOScieneCount)
+            {
+                SpawnUFO();
+            }
             _killedAsteroids = 0;
         }
+    }
+
+    public void OnFinishGame()
+    {
+        GameManager.Instanse.CurrentUFOCount = 0;
     }
 }

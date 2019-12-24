@@ -19,6 +19,6 @@ public class BigAsteroidDestroyModel : BaseCustomDestoroyModel {
 	}
 
 	private void OnDisable() {
-		GameManager.Instanse.CurrentAsteroidsCount--;
+		//GameManager.Instanse.CurrentAsteroidsCount--;
 	}
 }

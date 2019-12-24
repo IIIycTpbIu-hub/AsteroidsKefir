@@ -20,10 +20,10 @@ public class DamageController{
 			if(destroyModel != null)
 			{
 				bool killed = _healthModel.SetDamage (damage, destroyModel);
-					if(killed)
-					{
-						GameManager.Instanse.GameEventSystem.DestroyObjectEventLaunch(damage, victim);
-					}
+				if(killed)
+				{
+					GameManager.Instanse.GameEventSystem.DestroyObjectEventLaunch(damage, victim);
+				}
 			}	
 	}
 

@@ -19,7 +19,7 @@ public class UFODestroyModel : BaseCustomDestoroyModel {
 	}
 
 	void OnDisable() {
-		GameManager.Instanse.CurrentUFOCount--;
+		//GameManager.Instanse.CurrentUFOCount--;
 	}
 	
 	
